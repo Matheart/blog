@@ -1,53 +1,81 @@
 site_name: Matheart's Note
 
-theme:
-    name: material
-    
-    palette:
-        scheme: slate
-    
-    font:
-        text: Noto Sans
-    
-    logo: assets/avatar.png
-    favicon: assets/avatar.png
+nav:
+    - Home:
+        - index.md
+    - Computer Science: 
+        - cs/index.md
+        - Markdown:
+            - cs/markdown/index.md
+        - Programming Languages:
+            - cs/pl/index.md
+            - Rust: cs/pl/rust.md
+    - Mathematics: 
+        - math/index.md
+    - ASoul:
+        - asoul/index.md
+
+theme: 
+  name: 'material'
+  logo: /assets/avatar.png
+  favicon: /assets/avatar.png
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  font:
+    text: JetBrains Mono
+    code: JetBrains Mono
+  palette:
+    - scheme: slate
 
 markdown_extensions:
-  - abbr
-  - pymdownx.snippets
-
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - meta
+  - def_list
   - attr_list
   - md_in_html
-  
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true 
-
-  - tables
-  - footnotes
-
-  - pymdownx.critic
-  - pymdownx.caret
+  - sane_lists
+  - admonition
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
-  - def_list
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - css/tasklist.css
+  - css/custom.css
+  - css/card.css
+
+extra_javascript:
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
+  - js/katex.js
+  # js/scheme.js # this is in template 'base.html'
+
+plugins:
+  - search
 
 copyright: Copyright &copy; 2022 - 2025 Matheart
