@@ -234,7 +234,7 @@
   
     <li class="md-tabs__item">
       <a href="../../../asoul/" class="md-tabs__link">
-        ASoul
+        A-SOUL
       </a>
     </li>
   
@@ -539,19 +539,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#compile-and-run-a-single-file" class="md-nav__link">
     Compile and Run a single file
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#compile-and-run-a-project" class="md-nav__link">
     Compile and Run a project
   </a>
   
-    <nav class="md-nav" aria-label="Compile and Run a project">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#useful-commands" class="md-nav__link">
@@ -567,9 +574,36 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#variables-and-mutability" class="md-nav__link">
     Variables and Mutability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type" class="md-nav__link">
+    Data Type
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-type" class="md-nav__link">
+    Scalar Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compound-type" class="md-nav__link">
+    Compound Type
   </a>
   
 </li>
@@ -756,14 +790,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../asoul/">ASoul</a>
+          <a href="../../../asoul/">A-SOUL</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="ASoul" data-md-level="1">
+      <nav class="md-nav" aria-label="A-SOUL" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          ASoul
+          A-SOUL
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -802,19 +836,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#compile-and-run-a-single-file" class="md-nav__link">
     Compile and Run a single file
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#compile-and-run-a-project" class="md-nav__link">
     Compile and Run a project
   </a>
   
-    <nav class="md-nav" aria-label="Compile and Run a project">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#useful-commands" class="md-nav__link">
@@ -830,9 +871,36 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#variables-and-mutability" class="md-nav__link">
     Variables and Mutability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type" class="md-nav__link">
+    Data Type
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-type" class="md-nav__link">
+    Scalar Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compound-type" class="md-nav__link">
+    Compound Type
   </a>
   
 </li>
@@ -859,11 +927,12 @@
 <h1 id="rust">Rust<a class="headerlink" href="#rust" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
+<p>Rust is a statically typed language so it must know the types of all variables at compile time. It can give very powerful static checking during compilation and can help you eliminate most of the errors before actually running the code. The language does not have a GC (Garbage Collector) but acheieve the purposes by the unique concepts called <strong>ownership</strong> and <strong>lifetime</strong>. Many of the examples and sentences here are directly adopted from <a href="https://doc.rust-lang.org/book">The Rust Programming Language</a>. </p>
 </div>
-<p>A brief summary of what I have learnt about this language. Many of the examples and sentences here are directly adopted from <a href="https://doc.rust-lang.org/book">The Rust Book</a>. </p>
-<h2 id="compile-and-run-a-single-file">Compile and Run a single file<a class="headerlink" href="#compile-and-run-a-single-file" title="Permanent link">&para;</a></h2>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<h3 id="compile-and-run-a-single-file">Compile and Run a single file<a class="headerlink" href="#compile-and-run-a-single-file" title="Permanent link">&para;</a></h3>
 <p>When there's only one file, we can use <code>rustc main.rs</code> to compile (just like <code>javac</code> in <code>Java</code>) and then use <code>./main.rs</code> to run it.</p>
-<h2 id="compile-and-run-a-project">Compile and Run a project<a class="headerlink" href="#compile-and-run-a-project" title="Permanent link">&para;</a></h2>
+<h3 id="compile-and-run-a-project">Compile and Run a project<a class="headerlink" href="#compile-and-run-a-project" title="Permanent link">&para;</a></h3>
 <p>Cargo is the powerful package manager of Rust. It is easy to use, only several commands can satisfy most of the daily usage.</p>
 <h3 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h3>
 <p>Create a new project
@@ -876,21 +945,65 @@ Compile and Run the project
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ cargo run 
 </code></pre></div></p>
 <h3 id="hello-world-program">Hello World Program<a class="headerlink" href="#hello-world-program" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><span class="filename">hello world</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 As you can see, the syntax here is quite similar to C/C++, there are some differences though. <code>fn</code> here refers to function, and also <code>!</code> is added behind <code>println</code> as <code>println</code> in Rust is a macro. (The meaning of macro would be introduced later).</p>
-<h3 id="variables-and-mutability">Variables and Mutability<a class="headerlink" href="#variables-and-mutability" title="Permanent link">&para;</a></h3>
-<p>Like in C++ there are variables and constants, in Scala there are <code>var</code> and <code>val</code>, we use <code>let</code> to define new variables, but the variables are by default immutable. Immutability has a lot of advantages (check <a href="https://en.wikipedia.org/wiki/Immutable_object">Wikipedia page</a> for detailed explanations). To make the variable mutable, we should add the keyword <code>mut</code> at the beginning.
+<h2 id="variables-and-mutability">Variables and Mutability<a class="headerlink" href="#variables-and-mutability" title="Permanent link">&para;</a></h2>
+<p>we use <code>let</code> to define new variables, and we call this kind of value assignment as <strong>variable binding</strong>. Like in C++ there are variables and constants, in Scala there are <code>var</code> and <code>val</code>, we have mutable and immutable variables in Rust as well , but the variables are by default immutable as immutability has a lot of advantages (check <a href="https://en.wikipedia.org/wiki/Immutable_object">Wikipedia page</a> for detailed explanations). To make the variable mutable, we should add the keyword <code>mut</code> at the beginning.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">const</span><span class="w"> </span><span class="n">THREE_HOURS_IN_SECONDS</span>: <span class="kt">u32</span> <span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
 </code></pre></div></p>
 <div class="admonition notice">
 <p class="admonition-title">Notice</p>
-<p>However, note that constants and immutable variables are different. The naming convention for naming constants is using all upper cases. Constants are valid for the entire time a program runs, within the scope they were declared in. </p>
+<p>However, note that constants and immutable variables are different. 
+The naming convention for constants is using all upper cases. Constants are valid for the entire time when a program runs, within the scope they were declared in. Also, constants can only be set to a constant expression, not the result of a value that could only be computed during runtime.</p>
 </div>
+<p>We can declare a new variable with the same name as previous variable and we call this kind of operation as <strong>shadowing</strong>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The value of y in the inner scope is: {y}&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+Like this one, we first initialize the immutable variable <code>y</code> by binding 5 to it. Then we shadow <code>y</code> by <code>y + 1</code>. Inside the curly brackets, we shadow <code>y</code> again, when the scope is over, the inner shadowing ends. So the output value should be 6.</p>
+<p>The following code can run smoothly:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">spaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;   &quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">spaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spaces</span><span class="p">.</span><span class="n">len</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+However, if we add <code>mut</code> to <code>spaces</code>. It would pop out errors because the compiler perceives it as mutating the type of the variable instead of shadowing, which is not allowed.</p>
+<h2 id="data-type">Data Type<a class="headerlink" href="#data-type" title="Permanent link">&para;</a></h2>
+<p>As shown previously, we don't always need to write out the type explicitly (<code>let y = 5;</code>) unless the compiler requires more about the type information of the variable.
+If doing so, it would be like: <code>let y: i32 = 5;</code>, it is called <strong>type annotation</strong>.</p>
+<p>There are two data type subsets, namely <strong>Scalar Types</strong> and <strong>Compound Types</strong>.</p>
+<h3 id="scalar-type">Scalar Type<a class="headerlink" href="#scalar-type" title="Permanent link">&para;</a></h3>
+<h4 id="integer-type">Integer Type<a class="headerlink" href="#integer-type" title="Permanent link">&para;</a></h4>
+<p><code>u32</code> is one of the integer types, where <code>u</code> refers to unsigned, <code>32</code> refers to the number of bits. Similarly, there are <code>i32</code>, <code>u16</code>, <code>u32</code>, <code>i128</code>, ... By basic CS knowledge, it is trivial to calculate the range of each type.  The <code>isize</code> and <code>usize</code> types depend on the architecture of the computer your program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture. We can call the functions <code>usize::MIN</code>, <code>usize::MAX</code>, <code>isize::MIN</code>, <code>isize::MAX</code>.</p>
+<p>The number literals can be represented under different basis. For example: <code>0xff</code>, <code>0o77</code>, <code>0b1100_0100</code>, <code>b'A'</code>, <code>345_678</code> etc. One of the unique features of Rust is that it can insert <code>_</code> inside the numbers to improve the readability like the binary number given above.</p>
+<p>We still need to handle the integer overflow issue in Rust. </p>
+<p>Wrap in all modes with the <code>wrapping_*</code> methods, such as <code>wrapping_add</code>
+Return the None value if there is overflow with the <code>checked_*</code> methods
+Return the value and a boolean indicating whether there was overflow with the <code>overflowing_*</code> methods
+Saturate at the value’s minimum or maximum values with <code>saturating_*</code> methods</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">of_x</span><span class="w"> </span>: <span class="kt">u8</span> <span class="o">=</span><span class="w"> </span><span class="mi">233</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">of_y</span><span class="w"> </span>: <span class="kt">u8</span> <span class="o">=</span><span class="w"> </span><span class="mi">133</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">of_x</span><span class="p">.</span><span class="n">wrapping_add</span><span class="p">(</span><span class="n">of_y</span><span class="p">);</span><span class="w"> </span><span class="c1">// 110</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">of_x</span><span class="p">.</span><span class="n">checked_add</span><span class="p">(</span><span class="n">of_y</span><span class="p">);</span><span class="w"> </span><span class="c1">// None</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">of_x</span><span class="p">.</span><span class="n">overflowing_add</span><span class="p">(</span><span class="n">of_y</span><span class="p">).</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">of_x</span><span class="p">.</span><span class="n">saturating_add</span><span class="p">(</span><span class="n">of_y</span><span class="p">));</span><span class="w"> </span><span class="c1">// 255</span>
+</code></pre></div>
+<h4 id="floating-point-type">Floating-point Type<a class="headerlink" href="#floating-point-type" title="Permanent link">&para;</a></h4>
+<p>Only <code>f32</code> and <code>f64</code>.</p>
+<p>The boolean type and char type are similiar to C/C++.</p>
+<h3 id="compound-type">Compound Type<a class="headerlink" href="#compound-type" title="Permanent link">&para;</a></h3>
+<h4 id="tuple-type">Tuple Type<a class="headerlink" href="#tuple-type" title="Permanent link">&para;</a></h4>
+<p>Tuple has fixed length but allows its elements to have different types. </p>
+<h4 id="array-type">Array Type<a class="headerlink" href="#array-type" title="Permanent link">&para;</a></h4>
+<h4 id="string-type">String Type<a class="headerlink" href="#string-type" title="Permanent link">&para;</a></h4>
 
 
 
