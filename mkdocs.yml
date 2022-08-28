@@ -1,0 +1,53 @@
+site_name: Matheart's Note
+
+theme:
+    name: material
+    
+    palette:
+        scheme: slate
+    
+    font:
+        text: Noto Sans
+    
+    logo: assets/avatar.png
+    favicon: assets/avatar.png
+
+markdown_extensions:
+  - abbr
+  - pymdownx.snippets
+
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - attr_list
+  - md_in_html
+  
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+
+  - tables
+  - footnotes
+
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+copyright: Copyright &copy; 2022 - 2025 Matheart
