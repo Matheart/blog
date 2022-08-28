@@ -18,13 +18,13 @@ nav:
             - cs/markdown/index.md
     - Mathematics: 
         - math/index.md
-    - ASoul:
+    - A-SOUL:
         - asoul/index.md
 
 theme: 
   name: 'material'
-  logo: /assets/avatar.png
-  favicon: /assets/avatar.png
+  logo: assets/avatar.png
+  favicon: assets/avatar.png
   features:
     - content.code.annotate
     - navigation.tracking

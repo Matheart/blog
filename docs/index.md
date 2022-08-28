@@ -7,15 +7,15 @@
         - HKUST CS & Math 25'
         - HKUST Freshman 2021 Server Owner
         - B站不知名知识区UP主
-        - ASoul五人团粉 + 3u
+        - A-SOUL五人团粉 + 3u
 
 ## Table of Contents
 - [Computer Science](cs)
-    - [Machine Learning](cs/ml)
-    - [Computer Architecture](cs/archi)
+    - [Machine Learning (TO-DO)](cs/ml)
+    - [Computer Architecture (TO-DO)](cs/archi)
     - [Programming Languages](cs/pl)
         - [Rust](cs/pl/rust)
-    - [Algorithms](cs/algo)
+    - [Algorithms (TO-DO)](cs/algo)
     - [Markdown](cs/markdown)
 - [Mathematics](math)
 
