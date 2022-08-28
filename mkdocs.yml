@@ -5,11 +5,17 @@ nav:
         - index.md
     - Computer Science: 
         - cs/index.md
-        - Markdown:
-            - cs/markdown/index.md
+        - Machine Learning:
+          - cs/ml/index.md
+        - Computer Architecture:
+          - cs/archi/index.md
         - Programming Languages:
             - cs/pl/index.md
             - Rust: cs/pl/rust.md
+        - Algorithms:
+          - cs/algo/index.md
+        - Markdown:
+            - cs/markdown/index.md
     - Mathematics: 
         - math/index.md
     - ASoul:

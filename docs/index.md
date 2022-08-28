@@ -11,9 +11,12 @@
 
 ## Table of Contents
 - [Computer Science](cs)
-    - [Markdown](cs/markdown)
+    - [Machine Learning](cs/ml)
+    - [Computer Architecture](cs/archi)
     - [Programming Languages](cs/pl)
         - [Rust](cs/pl/rust)
+    - [Algorithms](cs/algo)
+    - [Markdown](cs/markdown)
 - [Mathematics](math)
 
 <img src="assets/asoul-carol.png" alt="drawing" width="600"/>
