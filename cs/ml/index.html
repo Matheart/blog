@@ -720,6 +720,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulations" class="md-nav__link">
+    Mathematical Formulations
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -733,7 +748,41 @@
 
 
 <h1 id="machine-learning">Machine Learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h1>
-<p>To be implemented when I will be taking the statistical machine learning course MATH4432.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The note here would tend to be quite theoretical. Some of the examples and sentences here are directly adopted from ISML, ESL, and COMP4432 Statistical Machine Learning lecture slides.</p>
+</div>
+<p><strong>Statistical learning</strong> refers to learn from data, can be classified as supervised, semi-supervised and unsupervised:</p>
+<ul>
+<li>supervised (with labeled output): prediction, estimation</li>
+<li>unsupervised (without labeled output): clustering</li>
+<li>semi-supervised (large amount of unlabeled data and small amount of labeled data) </li>
+</ul>
+<p>For prediction there are two types as well, regression (回归) refers to continuous or quantitative output value, otherwise would be classification (分类). </p>
+<p>Linear regression is the simplest regression method by using linear equations to approximate a certain function.</p>
+<h2 id="mathematical-formulations">Mathematical Formulations<a class="headerlink" href="#mathematical-formulations" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(n\)</span>: Number of distinct data points</p>
+<p><span class="arithmatex">\(p\)</span>: Number of features / predictors / variables</p>
+<p>For instance, regarding <code>Wage</code>, there are 300 sample points where they are 10 factors like <code>year</code>, <code>age</code>, <code>race</code>, ... Then we have <span class="arithmatex">\(n = 300\)</span>, <span class="arithmatex">\(p = 10\)</span>.</p>
+<p>We can use matrix <span class="arithmatex">\(\textbf{X}\)</span> to denote the data, and vector <span class="arithmatex">\(\textbf{y}\)</span> to denote output:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>x</mi><mrow><mn>12</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>x</mi><mrow><mn>1</mn><mi>p</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>x</mi><mrow><mn>22</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>x</mi><mrow><mn>2</mn><mi>p</mi></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd><mtd><mrow><mo>⋮</mo></mrow></mtd><mtd><mo>⋱</mo></mtd><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>n</mi><mn>1</mn></mrow></msub></mtd><mtd><msub><mi>x</mi><mrow><mi>n</mi><mn>2</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>x</mi><mrow><mi>n</mi><mi>p</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">]</mo></mrow></math>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>y</mi><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>y</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+<p>The rows of <span class="arithmatex">\(\textbf{X}\)</span> refer to each data point, we can denote it as <span class="arithmatex">\(x_i\)</span>:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mi>p</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+
+<p>The columns of <span class="arithmatex">\(\textbf{x}\)</span> refer to the collection of data points in terms of a certain feature, we can denote it as <span class="arithmatex">\(\textbf{x}_j\)</span>:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>j</mi></msub><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mn>1</mn><mi>j</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mn>2</mn><mi>j</mi></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>n</mi><mi>j</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+<p>Therefore,</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mn>1</mn></msub><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mn>2</mn></msub><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><mo>⋯</mo><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>p</mi></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msubsup><mi>x</mi><mn>1</mn><mrow><mi>T</mi></mrow></msubsup></mtd></mtr><mtr><mtd><msubsup><mi>x</mi><mn>2</mn><mrow><mi>T</mi></mrow></msubsup></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msubsup><mi>x</mi><mi>n</mi><mrow><mi>T</mi></mrow></msubsup></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+
+<p>We can give this formula:
+$$
+\textbf{y} = f(\textbf{X}) + \varepsilon
+$$
+<span class="arithmatex">\(\textbf{y}\)</span> is the observed output while <span class="arithmatex">\(\textbf{X}\)</span> is the observed input, <span class="arithmatex">\(f\)</span> is the actual function that maps <span class="arithmatex">\(\textbf{X}\)</span> into the ideal output, there's an error between observed and ideal output, and the <strong>expected value</strong> of error is 0.</p>
+<p>A set of inputs <span class="arithmatex">\(\textbf{X}\)</span> is always available but it is not always easy for us to obtain the corresponding <span class="arithmatex">\(\textbf{y}\)</span>. We denote <span class="arithmatex">\(\hat{\textbf{y}}\)</span> as an estimate of <span class="arithmatex">\(\textbf{y}\)</span>, and <span class="arithmatex">\(\hat{f}(\textbf{X})\)</span> an estimate of <span class="arithmatex">\(f(\textbf{X})\)</span>.</p>
+<p>Then,</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true" columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" rowspacing="3pt"><mtr><mtd></mtd><mtd><mtext>&nbsp;</mtext><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">y</mtext></mrow><mo>−</mo><mrow><mover><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">y</mtext></mrow><mo stretchy="false">^</mo></mover></mrow><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">[</mo><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo>−</mo><mrow><mover><mi>f</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mi>ε</mi><msup><mo stretchy="false">]</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mo stretchy="false">[</mo><mi>f</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo>−</mo><mrow><mover><mi>f</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup><mo>+</mo><mn>2</mn><mo>⋅</mo><mtext>&nbsp;</mtext><mo>.</mo><mo>.</mo><mo>.</mo><mtext>&nbsp;</mtext><mo>⋅</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><mi>ε</mi><mo stretchy="false">)</mo><mo>+</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><msup><mi>ε</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mo stretchy="false">[</mo><mi>f</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo>−</mo><mrow><mover><mi>f</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup><mo>+</mo><mn>0</mn><mo>+</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><msup><mi>ε</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><mi>ε</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mi>V</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><mi>ε</mi><mo stretchy="false">)</mo></mtd></mtr></mtable></math>
 
 
 
@@ -819,9 +868,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="../../js/katex.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
