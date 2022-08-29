@@ -1,6 +1,6 @@
 # Rust
 !!! Abstract
-    Rust is a statically typed language so it must know the types of all variables at compile time. The language does not have a GC (Garbage Collector) but acheieve the purposes by its unique functionalities called **ownership** and **lifetime**. Many of the examples and sentences here are directly adopted from [The Rust Programming Language](https://doc.rust-lang.org/book). 
+    Rust is a statically typed language so it must know the types of all variables at compile time. The language does not have a GC (Garbage Collector) but achieve the purposes by its unique functionalities called **ownership** and **lifetime**. Many of the examples and sentences here are directly adopted from [The Rust Programming Language](https://doc.rust-lang.org/book). 
 
 ## Basics
 ### Compile and Run
@@ -44,6 +44,16 @@ const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
     However, note that constants and immutable variables are different. 
     The naming convention for constants is using all upper cases. Constants are valid for the entire time when a program runs, within the scope they were declared in. Also, constants can only be set to a constant expression, not the result of a value that could only be computed during runtime.
 
+**Variable scope** is a concept that is frequently used, it refers to the range within a program for which an item is valid. 
+
+For example:
+```rust
+{
+    let s = "hello";
+}
+```
+Inside the curly bracket there defines a scope, and `s` is valid inside, after going out of the scope, it becomes invalid, just like the local variable.
+
 We can declare a new variable with the same name as previous variable and we call this kind of operation as **shadowing**.
 ```rust
 let y = 5;
@@ -63,10 +73,12 @@ spaces = spaces.len();
 ```
 However, if we add `mut` to `spaces`. It would pop out errors because the compiler perceives it as mutating the type of the variable instead of shadowing, which is not allowed.
 
-## Data Type
-!!! Info
-    As shown previously, we don't always need to write out the type explicitly (`let y = 5;`) unless the compiler requires more about the type information of the variable.
-    If doing so, it would be like: `let y: i32 = 5;`, it is called **type annotation**.
+## Data Type I
+!!!info
+    Here I will only introduce some basic data types, more complicated ones like String, Vector, Map would be introduced later as `Data Type II`.
+
+As shown previously, we don't always need to write out the type explicitly (`let y = 5;`) unless the compiler requires more about the type information of the variable.
+If doing so, it would be like: `let y: i32 = 5;`, it is called **type annotation**.
 
 There are two data type subsets, namely **Scalar Types** and **Compound Types**.
 
@@ -157,7 +169,6 @@ thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 10
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ``` 
 This actually shows Rust's memory safety principles in action. It is very hard to debug if having invalid array elements access in C/C++ because it would trigger unexpected modification of data in other side of the program.
-#### String Type
 
 ## Function
 A typical example:
@@ -287,11 +298,59 @@ for number in (1..4) {
 ```
 Here `(1..4)` refers to `[1, 4)` just like Python, to refer to `[1, 4]`, we should use `(1..=4)` instead.
 
-### * Ownership
+## * Ownership
 !!!info
     Ownership is Rust’s most unique feature and has deep implications for the rest of the language. It enables Rust to make memory safety guarantees without needing a garbage collector, so it’s important to understand how ownership works.
 
 It governs how a Rust program manages memory.
 
-!!! Note
-    Stack and Heap are two important data structures in memory management.
+Stack and Heap are two important data structures in memory management.
+
+- Stack is FILO, all data stored on the stack must have a known, fixed size.
+- Heap is less organized and stores data with unknown size at compile time or a size that might change. 
+
+#### Efficency of putting new data
+The memory allocator of heap would find an empty spot that is big enough if new data to be inserted, this is called **allocating on the heap**. Therefore, pushing to the stack is faster than allocating on the heap as the allocator does not need to search for a place to store new data, the new location is always at the top of stack.
+
+#### Efficency of accessing data
+It is still faster on the stack as it does not need to follow a pointer to get there.
+
+The main purpose of ownership is keeping track of what parts of code are using what data on the heap, minimizing the amount of duplicate data on the heap, and cleaning up unused data on the heap so you don’t run out of space are all problems that ownership addresses. 
+
+There are three ownership rules:
+
+- Each value in Rust has an owner.
+- There can only be one owner at a time.
+- When the owner goes out of scope, the value will be dropped.
+
+## Data Type II
+### String Type
+The `String` type is far more complicated than it seems.
+```rust
+let s1 = String::from("hello");
+let s2 = "world".to_string();
+```
+We can convert raw string to the `String` type either by calling `String::from` or `.to_string()`.
+
+The internal structure looks like this:
+
+<img src="../../../assets/string_internal.svg" alt="drawing" width="250"/>
+
+The left part is stored on stack, consisting of: the length and capacity (we can ignore capacity at this moment) of the string, and the pointer `ptr` pointing to string content on the heap. We store it on the heap because the length of string might be changed later (e.g.: extension).
+
+We use different methods to append new raw string / char.
+```rust
+let mut s1 = String::from("foo");
+let s2 = "bar";
+s1.push_str(s2);
+println!("s2 is {}", s2);
+
+let mut s = String::from("lo");
+s.push('l');
+```
+
+We will cover the shallow and deep copying issue.
+
+### Vector
+
+### Map

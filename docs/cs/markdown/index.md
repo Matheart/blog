@@ -41,3 +41,8 @@ fn makes_copy(some_integer: i32) { // some_integer comes into scope
     - b
     - c
     - d
+
+Hello, $a^2 + b^2 = c^2$
+$$
+a^2 + c^2
+$$
