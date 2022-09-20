@@ -233,8 +233,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../asoul/" class="md-tabs__link">
-        A-SOUL
+      <a href="../../carol/" class="md-tabs__link">
+        珈乐(33)
       </a>
     </li>
   
@@ -681,14 +681,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../asoul/">A-SOUL</a>
+          <a href="../../carol/">珈乐(33)</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="A-SOUL" data-md-level="1">
+      <nav class="md-nav" aria-label="珈乐(33)" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          A-SOUL
+          珈乐(33)
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -733,6 +733,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reducible-and-irreducible-error" class="md-nav__link">
+    Reducible and irreducible error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-choosing" class="md-nav__link">
+    Model choosing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measuring-the-quality-of-fit" class="md-nav__link">
+    Measuring the quality of fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bias-variance-tradeoff" class="md-nav__link">
+    Bias &amp; Variance tradeoff
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    Regression
+  </a>
+  
+    <nav class="md-nav" aria-label="Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-linear-regression" class="md-nav__link">
+    Simple Linear Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-linear-regression" class="md-nav__link">
+    Multiple Linear Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -750,9 +825,9 @@
 <h1 id="machine-learning">Machine Learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The note here would tend to be quite theoretical. Some of the examples and sentences here are directly adopted from ISML, ESL, and COMP4432 Statistical Machine Learning lecture slides.</p>
+<p>Some of the examples and sentences here are directly adopted from ISML, ESL, and COMP4432 Statistical Machine Learning lecture slides. The note is not complete and may have frequent modifications.</p>
 </div>
-<p><strong>Statistical learning</strong> refers to learn from data, can be classified as supervised, semi-supervised and unsupervised:</p>
+<p><strong>Statistical learning (统计学习)</strong> refers to learn from data, can be classified as supervised, semi-supervised and unsupervised:</p>
 <ul>
 <li>supervised (with labeled output): prediction, estimation</li>
 <li>unsupervised (without labeled output): clustering</li>
@@ -765,8 +840,20 @@
 <p><span class="arithmatex">\(p\)</span>: Number of features / predictors / variables</p>
 <p>For instance, regarding <code>Wage</code>, there are 300 sample points where they are 10 factors like <code>year</code>, <code>age</code>, <code>race</code>, ... Then we have <span class="arithmatex">\(n = 300\)</span>, <span class="arithmatex">\(p = 10\)</span>.</p>
 <p>We can use matrix <span class="arithmatex">\(\textbf{X}\)</span> to denote the data, and vector <span class="arithmatex">\(\textbf{y}\)</span> to denote output:</p>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>x</mi><mrow><mn>12</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>x</mi><mrow><mn>1</mn><mi>p</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>x</mi><mrow><mn>22</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>x</mi><mrow><mn>2</mn><mi>p</mi></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd><mtd><mrow><mo>⋮</mo></mrow></mtd><mtd><mo>⋱</mo></mtd><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>n</mi><mn>1</mn></mrow></msub></mtd><mtd><msub><mi>x</mi><mrow><mi>n</mi><mn>2</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>x</mi><mrow><mi>n</mi><mi>p</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">]</mo></mrow></math>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>y</mi><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>y</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+<div class="arithmatex">\[\begin{aligned}
+\mathbf{X}=\left[\begin{array}{cccc}
+x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 p} \\
+x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n p}
+\end{array}\right] 
+\ \ \ y=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)
+\end{aligned}\]</div>
 <p>The rows of <span class="arithmatex">\(\textbf{X}\)</span> refer to each data point, we can denote it as <span class="arithmatex">\(x_i\)</span>:</p>
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mi>p</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
 
@@ -779,10 +866,73 @@
 $$
 \textbf{y} = f(\textbf{X}) + \varepsilon
 $$
-<span class="arithmatex">\(\textbf{y}\)</span> is the observed output while <span class="arithmatex">\(\textbf{X}\)</span> is the observed input, <span class="arithmatex">\(f\)</span> is the actual function that maps <span class="arithmatex">\(\textbf{X}\)</span> into the ideal output, there's an error between observed and ideal output, and the <strong>expected value</strong> of error is 0.</p>
+<span class="arithmatex">\(\textbf{y}\)</span> is the observed output while <span class="arithmatex">\(\textbf{X}\)</span> is the observed input, <span class="arithmatex">\(f\)</span> is the ground truth function that maps <span class="arithmatex">\(\textbf{X}\)</span> into the ideal output, there's an error between observed and ideal output, and we have the assumption that <span class="arithmatex">\(\mathbb{E}(\varepsilon)=0\)</span>.</p>
 <p>A set of inputs <span class="arithmatex">\(\textbf{X}\)</span> is always available but it is not always easy for us to obtain the corresponding <span class="arithmatex">\(\textbf{y}\)</span>. We denote <span class="arithmatex">\(\hat{\textbf{y}}\)</span> as an estimate of <span class="arithmatex">\(\textbf{y}\)</span>, and <span class="arithmatex">\(\hat{f}(\textbf{X})\)</span> an estimate of <span class="arithmatex">\(f(\textbf{X})\)</span>.</p>
-<p>Then,</p>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true" columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" rowspacing="3pt"><mtr><mtd></mtd><mtd><mtext>&nbsp;</mtext><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">y</mtext></mrow><mo>−</mo><mrow><mover><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">y</mtext></mrow><mo stretchy="false">^</mo></mover></mrow><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">[</mo><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo>−</mo><mrow><mover><mi>f</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mi>ε</mi><msup><mo stretchy="false">]</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mo stretchy="false">[</mo><mi>f</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo>−</mo><mrow><mover><mi>f</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup><mo>+</mo><mn>2</mn><mo>⋅</mo><mtext>&nbsp;</mtext><mo>.</mo><mo>.</mo><mo>.</mo><mtext>&nbsp;</mtext><mo>⋅</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><mi>ε</mi><mo stretchy="false">)</mo><mo>+</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><msup><mi>ε</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mo stretchy="false">[</mo><mi>f</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><mo>−</mo><mrow><mover><mi>f</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup><mo>+</mo><mn>0</mn><mo>+</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><msup><mi>ε</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mrow><mi mathvariant="double-struck">E</mi></mrow><mo stretchy="false">(</mo><mi>ε</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>=</mo></mtd><mtd><mtext>&nbsp;</mtext><mi>V</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><mi>ε</mi><mo stretchy="false">)</mo></mtd></mtr></mtable></math>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<h3 id="reducible-and-irreducible-error">Reducible and irreducible error<a class="headerlink" href="#reducible-and-irreducible-error" title="Permanent link">&para;</a></h3>
+<p>Then with <span class="arithmatex">\(\mathbb{E}(\varepsilon)=0\)</span> and an additional assumption that both <span class="arithmatex">\(\hat{f}\)</span> and <span class="arithmatex">\(X\)</span> is fixed, we have:</p>
+<div class="arithmatex">\[\begin{align}
+\mathbb{E}(Y-\hat{Y})^2 &amp; = \mathbb{E}[f(X) +\varepsilon - \hat{f}(X)]^2\\
+&amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + 2 \mathbb{E}((f(X)-\hat{f}(X))\varepsilon) + \mathbb{E}(\varepsilon^2)\\
+&amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + \mathbb{E}(\varepsilon^2) - \mathbb{E}(\varepsilon)^2\\
+&amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + \text{Var}(\varepsilon)
+\end{align}\]</div>
+<p><span class="arithmatex">\(\mathbb{E}[f(X) - \hat{f}(X)]^2\)</span> is the error that we could reduce by selecting the most appropriate model, but <span class="arithmatex">\(\text{Var}(\varepsilon)\)</span> is the irreducible error.</p>
+<h3 id="model-choosing">Model choosing<a class="headerlink" href="#model-choosing" title="Permanent link">&para;</a></h3>
+<p>To minimize the reducible error, we need to pick a suitable model to estimate model, there are two types of model, namely parametric and non-parametric.</p>
+<p>For the parametric method, we first make an assumption about the form of the ground truth function e.g. linear. After the model has been selected, we use the training data to <strong>fit</strong> the model (train the parameters).</p>
+<p>A simple example: we assume <span class="arithmatex">\(f(X) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p\)</span>. The the model is trained to find the values of the parameters: <span class="arithmatex">\(\beta_0, \beta_1, \beta_2, \cdots, \beta_p\)</span> s.t. <span class="arithmatex">\(Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p\)</span>. The most common approach is called ordinary least squares which we will introduce in next section.</p>
+<p>Non-parametric methods do not make explicit assumptions about the function form of <span class="arithmatex">\(f\)</span>, so it is more flexible than non-parametric methods. Instead, they seek an estimate of <span class="arithmatex">\(f\)</span> s.t. it gets as close to the data points as possible without being too rough or wiggly.</p>
+<p><img src="../../assets/cs/ml/param_fit.jpg" alt="drawing" width="500"/></p>
+<p>As the photo has shown, the top-left is the ground truth function, the top-right is the parametric liner model (which is <strong>underfitting</strong> in this case), the bottom-left is the fitted spline model, and the bottom-right is a rough spline model with zero errors on the training data (which is called <strong>overfitting</strong>).</p>
+<p>The definition of underfitting (not flexible enough) is that it performs poor in both training and testing data, while the definition of overfitting (too flexible) is that it performs very well in training data but poor in the testing data. We will further illustrate this in the bias-varience tradeoff part.</p>
+<p><img src="../../assets/cs/ml/flexbility_overfitting.jpg" alt="drawing" width="500"/></p>
+<p>The red curve is testing error and grey curve is training error. As you can see, when flexibility increases, the grey curve gradually fits into the noise, the training error reaches minimum point when flexibility equals to 5.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that model flexibility is not always proportional to the number of parameters. This holds for linear regression though.</p>
+</div>
+<p>Although we have many available models, <strong>there is no free lunch in statistics</strong>, which means there doesn't exist the so-called best model for all cases. On a particular data set, one specific method may work best, but some other method may work better on a similar but different set. </p>
+<h3 id="measuring-the-quality-of-fit">Measuring the quality of fit<a class="headerlink" href="#measuring-the-quality-of-fit" title="Permanent link">&para;</a></h3>
+<p>We typically use mean-squared-error (MSE) given by</p>
+<div class="arithmatex">\[\text{MSE} = \frac{1}{n}{\sum_{i=1}^{n}{(y_i - \hat{f}(x_i))^2}}\]</div>
+<p>There are train and test MSEs and our main interest is to choose the method that <strong>minimise test MSE</strong>.</p>
+<p>To avoid the curve being too flexible, we normally use the <strong>smoothing spline method</strong>, where we add a special regularisation term:</p>
+<div class="arithmatex">\[\frac{1}{n}{\sum_{i=1}^{n}{(y_i - \hat{f}(x_i))^2}} + \lambda \int \hat{f}''(t) \ dt\]</div>
+<p><span class="arithmatex">\(\lambda\)</span> is the tuning parameter, when it is zero, we could allow the intergal value to be very large, so the model can be very flexible i.e. <span class="arithmatex">\(y_i = \hat{f}(x_i)\)</span>, when it tends to infinity, as we want to minimize MSE, the model would be very rigid i.e. <span class="arithmatex">\(y_i = \hat{a}x_i + \hat{b}\)</span>. So we can adjust the flexibility of the model by tuning the parameter.</p>
+<h3 id="bias-variance-tradeoff">Bias &amp; Variance tradeoff<a class="headerlink" href="#bias-variance-tradeoff" title="Permanent link">&para;</a></h3>
+<p>As it is impossible for us to obtain all data, we could only obtain some training data <span class="arithmatex">\(D\)</span>, but we want the model to work for all possible scenarios, so we want to find <span class="arithmatex">\(\hat{f}\)</span> to minimise</p>
+<div class="arithmatex">\[\mathbb{E}_{D}[f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\]</div>
+<p>(<span class="arithmatex">\(\hat{f}(x;D)\)</span> is the estimated function from the data set <span class="arithmatex">\(D\)</span>)</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>Actually we can take one additional expectation w.r.t. <span class="arithmatex">\(x_0\)</span> here but it would make the formula too complicated.</p>
+</div>
+<p>Then we can derive the formula:</p>
+<div class="arithmatex">\[\begin{align}
+&amp; \ [f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+=&amp; \ [f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D)) + \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+=&amp; \ [f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D)) \ | \ X = x_0]^2 + [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+&amp;+ 2 \ [f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0] \ [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]
+\end{align}\]</div>
+<p>The first term is a constant. Inside the second term <span class="arithmatex">\(\hat{f}(x_0;D)\)</span> is still a random variable. For the third term, <span class="arithmatex">\([f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0\)</span> is a constant but [ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D)  |  X = x_0] is a random variable.</p>
+<p>Then we take expectation w.r.t. <span class="arithmatex">\(D\)</span> on both sides and we got the third term equal to 0 since </p>
+<div class="arithmatex">\[\mathbb{E_D} [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0] = \mathbb{E}_{D}(\hat{f}(x_0;D)) - \mathbb{E}_{D}(\hat{f}(x_0;D)) = 0\]</div>
+<p>And the final result is</p>
+<div class="arithmatex">\[\begin{align}
+&amp; \ \mathbb{E}_{D}[f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+=&amp; \ \underbrace{[f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D))] \ | \ X = x_0]^2}_{\text{Bias}^2} + \underbrace{\mathbb{E}_{D}{[\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2}}_{\text{Variance}}\\
+\end{align}\]</div>
+<p>This formula tells us that we need to balance both bias and variance instead of only focusing on minimizing bias.</p>
+<p><strong>Bias</strong> refers to the error that is introduced by approximating a real-life problem, which may ne extremely complicated, by a much simpler model. The formula is quite easy to understand, is the difference between the ground truth value and the predicted value.</p>
+<p><strong>Variance</strong> refers to the amount by which <span class="arithmatex">\(\hat{f}\)</span> would change if we estimated it using a different training data set. Ideally the estimate for <span class="arithmatex">\(f\)</span> should not vary too much between training sets. The formula is basically a slightly complex version of <span class="arithmatex">\(\mathbb{E}[(X - \mathbb{E}(X))^2]\)</span>.</p>
+<p>For simple model, it has low variance but large bias. Example: <span class="arithmatex">\(Y = f(X) + \varepsilon\)</span>, we simply let <span class="arithmatex">\(\hat{f}(X) = 0\)</span>, then variance is 0, but bias is very large <span class="arithmatex">\(f(X)^2\)</span>. For very flexible model, it has high variance but low bias. Example: <span class="arithmatex">\(Y = f(X) + \varepsilon = 0 + \varepsilon\)</span>, where the ground truth function is <span class="arithmatex">\(0\)</span>, we let <span class="arithmatex">\(\hat{f}(x_i) = y_i\)</span>, which means it fits into the noise. Then <span class="arithmatex">\(\text{Var}(\hat{f}(x_i)) = \text{Var}(y_i) = \text{Var}(\varepsilon_i) = \sigma_i^2\)</span>, bias is <span class="arithmatex">\(f(x_i) - \mathbb{E}(\hat{f}(x_i)) = f(x_i) - \mathbb{E}(y_i) = 0\)</span>.</p>
+<h2 id="regression">Regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h2>
+<h3 id="simple-linear-regression">Simple Linear Regression<a class="headerlink" href="#simple-linear-regression" title="Permanent link">&para;</a></h3>
+<h3 id="multiple-linear-regression">Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Permanent link">&para;</a></h3>
+<p>least square solution
+brief mention of matrix calculus</p>
+<h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
 
 
 

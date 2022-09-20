@@ -233,8 +233,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../asoul/" class="md-tabs__link">
-        A-SOUL
+      <a href="../../carol/" class="md-tabs__link">
+        珈乐(33)
       </a>
     </li>
   
@@ -681,14 +681,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../asoul/">A-SOUL</a>
+          <a href="../../carol/">珈乐(33)</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="A-SOUL" data-md-level="1">
+      <nav class="md-nav" aria-label="珈乐(33)" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          A-SOUL
+          珈乐(33)
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -720,6 +720,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-basics" class="md-nav__link">
+    Computer Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Computer Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-system" class="md-nav__link">
+    Number System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#units" class="md-nav__link">
+    Units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-of-computers" class="md-nav__link">
+    Class of Computers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-of-abstractions" class="md-nav__link">
+    Levels of Abstractions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-computer" class="md-nav__link">
+    Components of Computer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technology-trend" class="md-nav__link">
+    Technology Trend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -733,7 +796,70 @@
 
 
 <h1 id="computer-architecture">Computer Architecture<a class="headerlink" href="#computer-architecture" title="Permanent link">&para;</a></h1>
-<p>To be implemented in 2022 Fall when I will be taking COMP2611.</p>
+<h2 id="computer-basics">Computer Basics<a class="headerlink" href="#computer-basics" title="Permanent link">&para;</a></h2>
+<h3 id="number-system">Number System<a class="headerlink" href="#number-system" title="Permanent link">&para;</a></h3>
+<p>There are mainly three number systems: decimal, binary, and hexadecimal.</p>
+<p>Decimal (base 10) is used by people, binary (base 2) is used by computers, where 0 represents OFF state (no volatge) and 1 represents ON state (have voltage), hexadecimal (base 16) is a concise representation of binary numbers. </p>
+<p>Some examples: <span class="arithmatex">\(3525_{10}\)</span>, <span class="arithmatex">\(100111_{2}\)</span>, FA289B<span class="arithmatex">\(_{16}\)</span>. The convertions between them are already taught in high school.</p>
+<h3 id="units">Units<a class="headerlink" href="#units" title="Permanent link">&para;</a></h3>
+<p>There are several units e.g.: kilo, mega, giga, tera, peta. But notice that they mean different things in different scenarios. When dealing with size such as <strong>memory or file</strong>, 1 kilo = 2^10, 1 mega = 2^20. When dealing with <strong>rate/frequency</strong> such as # instructions per sec, # clock ticks per sec, network speed,  1 kilo = 10^3, 1 mega = 10^6.</p>
+<h3 id="class-of-computers">Class of Computers<a class="headerlink" href="#class-of-computers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Personal Computers (PC)<ul>
+<li>General Purpose, variety of software</li>
+<li>Subject to cost / performance tradeoff</li>
+</ul>
+</li>
+<li>Server Computers  <ul>
+<li>Network based</li>
+<li>High capacity, performance, <strong>reliability</strong></li>
+<li>Range from small servers to building sized</li>
+</ul>
+</li>
+<li>Supercomputers<ul>
+<li>High-end scientific and engineering calculations</li>
+<li>Highest capability but represent a small fraction of the overall computer market </li>
+</ul>
+</li>
+<li>Embedded Computers<ul>
+<li>Hidden as components of systems</li>
+<li>Stringest power / performance / cost constraints</li>
+</ul>
+</li>
+</ul>
+<h3 id="levels-of-abstractions">Levels of Abstractions<a class="headerlink" href="#levels-of-abstractions" title="Permanent link">&para;</a></h3>
+<p>Hardware =&gt; System Software (e.g.: Windows, Linux) =&gt; Application Software</p>
+<p>Both hardware and software are organized into hierarchical layers, in which lower-level details are hidden to offer a simpler view at the higher levels.</p>
+<p>There are levels of program code to cope with these layers and their interactions as well, namely binary machine language program, assembly language (e.g.: MIPS), and high-level language (e.g.: C/C++). </p>
+<p>The abstract interface between hardware and software is called <code>Instruction Set Architecture</code> (ISA) (e.g. Intel x86, ARM, MIPS). It can allow different implementations of varying cost and performance to follow the same instruction test architecture. Example: 80x86, Pentium, Pentium II, Pentium III, Pentium 4 all implement
+the same ISA.</p>
+<h3 id="components-of-computer">Components of Computer<a class="headerlink" href="#components-of-computer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Input<ul>
+<li>To communicate with the computer</li>
+<li>Data and instructions transferred to the memory</li>
+</ul>
+</li>
+<li>Output<ul>
+<li>To communicate with the user</li>
+<li>Data is read from the memory</li>
+</ul>
+</li>
+<li>Memory<ul>
+<li>Large store to keep instructions and data</li>
+</ul>
+</li>
+<li>Processor<ul>
+<li>Datapath: processes data according to instructions</li>
+<li>Control: commands the operations of input, output, memory, and datapath according to the instructions</li>
+</ul>
+</li>
+</ul>
+<h3 id="technology-trend">Technology Trend<a class="headerlink" href="#technology-trend" title="Permanent link">&para;</a></h3>
+<p>Vacuum Tubes (1950s) =&gt; Transistors (1950s and 1960s) =&gt; Integrated Circuits (1960s and 70s) =&gt; Very Large Scale Integrated (VLSI) Circuit (1980s and on)</p>
+<p>Cost / performance is improving due to underlying technology development.</p>
+<p>Moore's law: the number of transistors on microclips doubles every two years.</p>
+<p>This makes novel applications possible such as AI, World Wide Web, search machines ...</p>
 
 
 
