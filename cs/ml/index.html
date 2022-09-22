@@ -915,9 +915,9 @@ $$
 =&amp; \ [f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D)) \ | \ X = x_0]^2 + [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
 &amp;+ 2 \ [f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0] \ [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]
 \end{align}\]</div>
-<p>The first term is a constant. Inside the second term <span class="arithmatex">\(\hat{f}(x_0;D)\)</span> is still a random variable. For the third term, <span class="arithmatex">\([f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0\)</span> is a constant but [ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D)  |  X = x_0] is a random variable.</p>
+<p>The first term is a constant. Inside the second term <span class="arithmatex">\(\hat{f}(x_0;D)\)</span> is still a random variable. For the third term, <span class="arithmatex">\([f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0]\)</span> is a constant but <span class="arithmatex">\([\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]\)</span> is a random variable.</p>
 <p>Then we take expectation w.r.t. <span class="arithmatex">\(D\)</span> on both sides and we got the third term equal to 0 since </p>
-<div class="arithmatex">\[\mathbb{E_D} [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0] = \mathbb{E}_{D}(\hat{f}(x_0;D)) - \mathbb{E}_{D}(\hat{f}(x_0;D)) = 0\]</div>
+<div class="arithmatex">\[\mathbb{E}_{D} [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0] = \mathbb{E}_{D}(\hat{f}(x_0;D)) - \mathbb{E}_{D}(\hat{f}(x_0;D)) = 0\]</div>
 <p>And the final result is</p>
 <div class="arithmatex">\[\begin{align}
 &amp; \ \mathbb{E}_{D}[f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
@@ -929,9 +929,67 @@ $$
 <p>For simple model, it has low variance but large bias. Example: <span class="arithmatex">\(Y = f(X) + \varepsilon\)</span>, we simply let <span class="arithmatex">\(\hat{f}(X) = 0\)</span>, then variance is 0, but bias is very large <span class="arithmatex">\(f(X)^2\)</span>. For very flexible model, it has high variance but low bias. Example: <span class="arithmatex">\(Y = f(X) + \varepsilon = 0 + \varepsilon\)</span>, where the ground truth function is <span class="arithmatex">\(0\)</span>, we let <span class="arithmatex">\(\hat{f}(x_i) = y_i\)</span>, which means it fits into the noise. Then <span class="arithmatex">\(\text{Var}(\hat{f}(x_i)) = \text{Var}(y_i) = \text{Var}(\varepsilon_i) = \sigma_i^2\)</span>, bias is <span class="arithmatex">\(f(x_i) - \mathbb{E}(\hat{f}(x_i)) = f(x_i) - \mathbb{E}(y_i) = 0\)</span>.</p>
 <h2 id="regression">Regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h2>
 <h3 id="simple-linear-regression">Simple Linear Regression<a class="headerlink" href="#simple-linear-regression" title="Permanent link">&para;</a></h3>
+<p><img src="../../assets/cs/ml/simple_lr.jpg" alt="drawing" width="450"/></p>
+<p>Let <span class="arithmatex">\((x_1,y_1)\)</span>, <span class="arithmatex">\((x_2, y_2)\)</span>, <span class="arithmatex">\(\cdots\)</span>, <span class="arithmatex">\((x_n,y_n)\)</span> represent <span class="arithmatex">\(n\)</span> observation pairs, and we use simple linear regression <span class="arithmatex">\(\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_i\)</span> to fit the data.</p>
+<p>The error is defined as <span class="arithmatex">\(e_i = y_i - \hat{y_i}\)</span>, then the residual sum of squares (RSS) is 
+$$
+e_1^2 + e_2^2 + \cdots + e_n^2 = \sum_{i=1}^{n}{(y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2}
+$$
+To minimise the error, we simply let <span class="arithmatex">\(\frac{\partial (\text{RSS})}{\partial \hat{\beta_0}} = \frac{\partial (\text{RSS})}{\partial \hat{\beta_1}} = 0\)</span>, then with some algebraic operations we obtain:
+$$
+\hat{\beta_1} = \frac{\sum_{i=1}^{n}{(x_i - \overline{x})(y_i - \overline{y})}}{\sum_{i=1}^{n}{(x_i - \overline{x})^2}} \text{, }  \hat{\beta_0} = \overline{y} - \hat{\beta_1} \overline{x}
+$$
+Actually, when we are drawing the contour map of RSS w.r.t. <span class="arithmatex">\(\beta_0, \beta_1\)</span>, we can obtain the following ellipsoid shape:</p>
+<p><img src="../../assets/cs/ml/rss_contour.jpg" alt="drawing" width="500"/></p>
+<p>This is actually because of the squared term <span class="arithmatex">\((y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2\)</span>, term like this such as <span class="arithmatex">\(\beta_0^2 + \beta_1^2 = 1\)</span> can be written in the quadratic form (二次型):</p>
+<div class="arithmatex">\[\begin{bmatrix}
+ \beta_0
+ \\ \beta_1
+\end{bmatrix}^{T}
+\begin{bmatrix}
+  1&amp;0 \\
+  0&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+ \beta_0
+ \\ \beta_1
+\end{bmatrix}\]</div>
+<p>The quadratic form like <span class="arithmatex">\(\beta^{T}A \beta = C\)</span> with A being positive and definite (正定) has ellipsoid shape.</p>
+<p>After we have computed the values of coefficients, we can use our statistical knowledge to assess the accuracy of estimates. We assume the true relationship between <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> is the following:
+$$
+Y = f(X) + \varepsilon, f(X) = \beta_0 + \beta_1 X
+$$
+Then as the graph shows</p>
+<p><img src="../../assets/cs/ml/accuracy_lr.jpg" alt="drawing" width="500"/></p>
+<p>Red line is the true relationship, which is known as <strong>population regression line</strong>, other lines are least squares lines computed based on separate random set of observations. Each line is different but on average the least squares lines are quite close to the population regression line.</p>
+<p>... (the statistics part TO BE ADDED)</p>
+<p>We can use the <strong>residual standard error (RSE)</strong> to provide an absolute measure of lack of fit of the linear model (number of freedoms equals to the total number of parameters minus the two we want to estimate):
+$$
+\text{RSE} = \sqrt{\frac{1}{\text{degree of freedom}} \text{RSS}} = \sqrt{\frac{1}{n-2} \sum_{i=1}^{n}{(y_i - \hat{y_i})^2}}
+$$</p>
+<p><strong>R^2 statistics</strong> provides an alternative measure of fit.</p>
+<p>$$
+\text{TSS} = \sum{(y_i - \overline{y})^2},  \
+\text{RSS} = \sum{(y_i - \hat{y_i})^2}
+$$
+And <span class="arithmatex">\(R^2\)</span> is given by </p>
+<div class="arithmatex">\[
+R^2 = \frac{\text{TSS} - \text{RSS}}{\text{TSS}} = 1 - \frac{\text{RSS}}{\text{TSS}}
+\]</div>
+<p>The value is always between 0 and 1, if it is closed to 0, it means the prediction has similar effect as mean value, so it doesn't fit the data well; when it is closed to 1, it means the RSS is very small, that means it fits the data well.</p>
 <h3 id="multiple-linear-regression">Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Permanent link">&para;</a></h3>
-<p>least square solution
-brief mention of matrix calculus</p>
+<p>The equation becomes much more complicated than before:
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \varepsilon
+$$</p>
+<p>Then our goal is to find <span class="arithmatex">\(\hat{\beta} = [\hat{\beta_0}, \hat{\beta_1}, \cdots, \hat{\beta_p}]\)</span> be the least squares</p>
+<div class="arithmatex">\[
+\hat{\beta} = \text{argmin}_{\beta = [\beta_0, \beta_1, \cdots, \beta_p]}{\sum_{i=1}^{n}{(y_i - \beta_0 - \beta_1 x_{i1} - \cdots - \beta_{p} x_{ip})^2}}
+\]</div>
+<p>And with matrix calculus we can derive the result:</p>
+<div class="arithmatex">\[
+\hat{\beta} = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{T} \textbf{y}
+\]</div>
 <h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
 
 
