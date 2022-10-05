@@ -208,38 +208,6 @@
   
 
       
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../math/" class="md-tabs__link">
-        Mathematics
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../carol/" class="md-tabs__link">
-        珈乐(33)
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -612,94 +580,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../math/">Mathematics</a>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Mathematics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Mathematics
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../carol/">珈乐(33)</a>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="珈乐(33)" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          珈乐(33)
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -806,6 +686,19 @@
     Classification
   </a>
   
+    <nav class="md-nav" aria-label="Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -825,7 +718,7 @@
 <h1 id="machine-learning">Machine Learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Some of the examples and sentences here are directly adopted from ISML, ESL, and COMP4432 Statistical Machine Learning lecture slides. The note is not complete and may have frequent modifications.</p>
+<p>Some of the examples and sentences here are directly adopted from MATH4432 Statistical Machine Learning lecture slides. The note is not complete and may have frequent modifications, and the knowledge about regression analysis is ignored as this is not the focus of the course.</p>
 </div>
 <p><strong>Statistical learning (统计学习)</strong> refers to learn from data, can be classified as supervised, semi-supervised and unsupervised:</p>
 <ul>
@@ -847,7 +740,7 @@ x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 p} \\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n p}
 \end{array}\right] 
-\ \ \ y=\left(\begin{array}{c}
+\ \ \ \mathbf{y}=\left(\begin{array}{c}
 y_{1} \\
 y_{2} \\
 \vdots \\
@@ -870,7 +763,7 @@ $$
 <p>A set of inputs <span class="arithmatex">\(\textbf{X}\)</span> is always available but it is not always easy for us to obtain the corresponding <span class="arithmatex">\(\textbf{y}\)</span>. We denote <span class="arithmatex">\(\hat{\textbf{y}}\)</span> as an estimate of <span class="arithmatex">\(\textbf{y}\)</span>, and <span class="arithmatex">\(\hat{f}(\textbf{X})\)</span> an estimate of <span class="arithmatex">\(f(\textbf{X})\)</span>.</p>
 <h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
 <h3 id="reducible-and-irreducible-error">Reducible and irreducible error<a class="headerlink" href="#reducible-and-irreducible-error" title="Permanent link">&para;</a></h3>
-<p>Then with <span class="arithmatex">\(\mathbb{E}(\varepsilon)=0\)</span> and an additional assumption that both <span class="arithmatex">\(\hat{f}\)</span> and <span class="arithmatex">\(X\)</span> is fixed, we have:</p>
+<p>Then with <span class="arithmatex">\(\mathbb{E}(\varepsilon)=0\)</span> and an additional assumption that both <span class="arithmatex">\(\hat{f}\)</span> and <span class="arithmatex">\(X\)</span> is fixed for a moment, we have:</p>
 <div class="arithmatex">\[\begin{align}
 \mathbb{E}(Y-\hat{Y})^2 &amp; = \mathbb{E}[f(X) +\varepsilon - \hat{f}(X)]^2\\
 &amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + 2 \mathbb{E}((f(X)-\hat{f}(X))\varepsilon) + \mathbb{E}(\varepsilon^2)\\
@@ -962,7 +855,6 @@ $$
 Then as the graph shows</p>
 <p><img src="../../assets/cs/ml/accuracy_lr.jpg" alt="drawing" width="500"/></p>
 <p>Red line is the true relationship, which is known as <strong>population regression line</strong>, other lines are least squares lines computed based on separate random set of observations. Each line is different but on average the least squares lines are quite close to the population regression line.</p>
-<p>... (the statistics part TO BE ADDED)</p>
 <p>We can use the <strong>residual standard error (RSE)</strong> to provide an absolute measure of lack of fit of the linear model (number of freedoms equals to the total number of parameters minus the two we want to estimate):
 $$
 \text{RSE} = \sqrt{\frac{1}{\text{degree of freedom}} \text{RSS}} = \sqrt{\frac{1}{n-2} \sum_{i=1}^{n}{(y_i - \hat{y_i})^2}}
@@ -978,6 +870,7 @@ R^2 = \frac{\text{TSS} - \text{RSS}}{\text{TSS}} = 1 - \frac{\text{RSS}}{\text{T
 \]</div>
 <p>The value is always between 0 and 1, if it is closed to 0, it means the prediction has similar effect as mean value, so it doesn't fit the data well; when it is closed to 1, it means the RSS is very small, that means it fits the data well.</p>
 <h3 id="multiple-linear-regression">Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Permanent link">&para;</a></h3>
+<h4 id="derivation-of-formula">Derivation of formula<a class="headerlink" href="#derivation-of-formula" title="Permanent link">&para;</a></h4>
 <p>The equation becomes much more complicated than before:
 $$
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \varepsilon
@@ -986,11 +879,119 @@ $$</p>
 <div class="arithmatex">\[
 \hat{\beta} = \text{argmin}_{\beta = [\beta_0, \beta_1, \cdots, \beta_p]}{\sum_{i=1}^{n}{(y_i - \beta_0 - \beta_1 x_{i1} - \cdots - \beta_{p} x_{ip})^2}}
 \]</div>
-<p>And with matrix calculus we can derive the result:</p>
+<p>We know</p>
+<div class="arithmatex">\[\begin{aligned}
+\mathbf{X}=\left[\begin{array}{ccccc}
+\ 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 p} \\
+\ 1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 p} \\
+\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\ 1 &amp; x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n p}
+\end{array}\right] 
+\ \ \ \mathbf{y}=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)
+\end{aligned}\]</div>
+<p>where the first column is representing the constant part (would time <span class="arithmatex">\(\beta_0\)</span> later).</p>
+<p>Then the sum we want to minimise can be simplified as 
+<span class="arithmatex">\(\sum_{i=1}^{n}{(y_i - x_{\text{row i}} \ \beta)^2} \Rightarrow ||\mathbf{y} - \mathbf{X} \beta||_2^2\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="arithmatex">\(x_{\text{row i}}\)</span> is row vector, <span class="arithmatex">\(\beta\)</span> is column vector </p>
+<p><span class="arithmatex">\(\mathbf{X}: n \times (1 + p)\)</span>, <span class="arithmatex">\(\mathbf{y}: n \times 1\)</span>, <span class="arithmatex">\(\beta: (1 + p) \times 1\)</span></p>
+</div>
+<div class="arithmatex">\[\begin{align}
+&amp;||\mathbf{y}-\mathbf{X}\beta||\\
+=&amp; \ (\mathbf{y}-\mathbf{X}\beta)^{T} (\mathbf{y}-\mathbf{X}\beta)\\
+=&amp; \ (\mathbf{y}^T - \beta^T \mathbf{X}^T) (\mathbf{y}-\mathbf{X}\beta)\\
+=&amp; \ \mathbf{y}^T \mathbf{y} - \mathbf{y}^T \mathbf{X} \beta \ - \beta^T \mathbf{X}^T \mathbf{y} + \beta^T \mathbf{X}^T \mathbf{X}\beta\\ 
+\end{align}\]</div>
+<p>By dimension of <span class="arithmatex">\(\mathbf{X}\)</span>, <span class="arithmatex">\(\mathbf{y}\)</span> and <span class="arithmatex">\(\beta\)</span>, we know all four of the above are scalar, and in which <span class="arithmatex">\(\mathbf{y}^T \mathbf{X} \beta\)</span> is the transpose of <span class="arithmatex">\(\beta^T \mathbf{X}^T \mathbf{y}\)</span>, so they are supposed to have the same value:</p>
+<p>$$
+\hat{\beta} = \text{argmin}_{\beta}{ (\mathbf{y}^T \mathbf{y} - 2\mathbf{y}^T \mathbf{X} \beta  + \beta^T \mathbf{X}^T \mathbf{X}\beta)}
+$$
+We take partial derivative w.r.t. <span class="arithmatex">\(\beta\)</span>:</p>
 <div class="arithmatex">\[
-\hat{\beta} = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{T} \textbf{y}
+0 - 2 \mathbf{X}^T \mathbf{y} + 2 \mathbf{X}^T \mathbf{X} \beta = 0
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="arithmatex">\[\frac{\partial a^T X}{\partial X} = a\]</div>
+<div class="arithmatex">\[\frac{\partial X^T A X}{\partial X} = (A + A^{T}) X\]</div>
+</div>
+<p>Then</p>
+<div class="arithmatex">\[
+\mathbf{X}^T \mathbf{X} \beta = \mathbf{X}^T \mathbf{y}
+\]</div>
+<p>So we finally obtain</p>
+<div class="arithmatex">\[\begin{align}
+\hat{\beta} &amp; = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{T} \textbf{y}\\
+\hat{y} &amp; = X \hat{\beta}
+\end{align}\]</div>
+<h4 id="derive-the-mean-and-variance-of-beta-estimate">Derive the mean and variance of beta estimate<a class="headerlink" href="#derive-the-mean-and-variance-of-beta-estimate" title="Permanent link">&para;</a></h4>
+<p>By <span class="arithmatex">\(\mathbf{y} = \mathbf{X}\beta + \varepsilon\)</span> and <span class="arithmatex">\(\varepsilon\)</span> is a random noise vector, we know <span class="arithmatex">\(\mathbf{y}\)</span> is a random vector, so <span class="arithmatex">\(\hat \beta\)</span> is a random vector, and what follows is that <span class="arithmatex">\(\hat y\)</span> is a random vector as well. With this, we can compute the mean and variance of <span class="arithmatex">\(\hat \beta\)</span>.</p>
+<div class="arithmatex">\[\begin{align}
+\mathbb{E}(\hat \beta) &amp;= \mathbb{E} [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}]\\
+&amp;= \mathbb{E} [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T (\mathbf{X} \beta + \varepsilon)]\\
+&amp;= \mathbb{E} [\mathbf{X}^{-1} (\mathbf{X}^T)^{-1} \mathbf{X}^T \mathbf{X} \beta \ + (\mathbf{X}^T \mathbf{X}^{-1})\mathbf{X}^T \varepsilon]\\
+&amp;= \beta + (\mathbf{X}^T \mathbf{X}^{-1})\mathbf{X}^T\mathbb{E}(\varepsilon)\\
+&amp;= \beta
+\end{align}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="arithmatex">\[\text{Var}(\mathbf{z}) = \mathbb{E}(\mathbf{z} \mathbf{z}^T) - \mathbb{E}(\mathbf{z}) \mathbb{E}^{T}(\mathbf{z})\]</div>
+</div>
+<div class="arithmatex">\[\begin{align}
+\text{Var}(\hat \beta) &amp;= \text{Var}\ [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T\mathbf{y}]\\
+&amp;= \text{Var}\ [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T (\mathbf{X}\beta + \varepsilon)]\\
+&amp;= \text{Var}\ [\beta + (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]\\
+&amp;= \text{Var}\ [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]\\
+&amp;= \mathbb{E}[(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon \ \cdot \varepsilon^T \mathbf{X}(\mathbf{X}^T \mathbf{X})^{-1}] -\underbrace{\mathbb{E}[(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]}_{0} \cdot \mathbb{E}^{T}[(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]\\
+&amp;= (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \ \mathbb{E}[ \varepsilon \cdot \varepsilon^T] \ \mathbf{X}(\mathbf{X}^T \mathbf{X})^{-1}\\
+&amp;= (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \  \sigma_{\varepsilon}^{2} \ \mathbf{X}(\mathbf{X}^T \mathbf{X})^{-1}\\
+&amp;=  \sigma_{\varepsilon}^{2} (\mathbf{X}^T \mathbf{X})^{-1}
+\end{align}\]</div>
+<div class="admonition derivation">
+<p class="admonition-title">Derivation</p>
+<p>By independence of each element inside the random vector <span class="arithmatex">\(\varepsilon\)</span>, <span class="arithmatex">\(\text{Var}(\varepsilon) = \sigma_{\varepsilon}^{2} \ I_{n \times n}\)</span>.</p>
+<div class="arithmatex">\[
+\sigma_{\varepsilon}^{2} \ I_{n \times n} = \text{Var}(\varepsilon) = \mathbb{E}(\varepsilon \varepsilon^T) - \mathbb{E}(\varepsilon) \mathbb{E}^{T}(\varepsilon) = \mathbb{E}(\varepsilon \varepsilon^T)
+\]</div>
+<p>e.g.: <span class="arithmatex">\(\varepsilon = \begin{pmatrix}
+\varepsilon_1\\
+\varepsilon_2 
+\end{pmatrix}\)</span>, <span class="arithmatex">\(\text{cov}\ \varepsilon = \begin{pmatrix}
+\sigma_{\varepsilon}^{2} &amp; 0\\
+0 &amp; \sigma_{\varepsilon}^{2}
+\end{pmatrix}\)</span></p>
+</div>
+<h4 id="geometrical-interpretation-of-least-squares-regression">Geometrical Interpretation of least squares regression<a class="headerlink" href="#geometrical-interpretation-of-least-squares-regression" title="Permanent link">&para;</a></h4>
+<p><img src="../../assets/cs/ml/geometric_lr.jpg"  width="400"/></p>
+<p>Like the graph suggests, <span class="arithmatex">\(\text{col} \ \mathbf{X}\)</span> is the hyperplane spanned by column vectors of <span class="arithmatex">\(\mathbf{X}\)</span>. <span class="arithmatex">\(\mathbf{X} \hat\beta\)</span> could be considered as the linear combination of column vectors. Then our goal is to find <span class="arithmatex">\(\hat \beta\)</span> to minimise the norm of <span class="arithmatex">\(\mathbf{y} - \mathbf{X} \hat{\beta}\)</span>, which can only be achieved when it is perpendicular to the hyperplane, that is, <span class="arithmatex">\(\mathbf{X}^T (\mathbf{y} - \mathbf{X} \hat{\beta}) = 0\)</span>.</p>
+<p>Verification:</p>
+<div class="arithmatex">\[\begin{align}
+&amp;\mathbf{X}^T (\mathbf{y} - \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1}\mathbf{X}^T \mathbf{y})\\
+=&amp; \ \mathbf{X}^T (\mathbf{I} - \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1}\mathbf{X}^T) \mathbf{y}\\
+=&amp; \ (\mathbf{X}^T - \mathbf{X}^T \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1}\mathbf{X}^T) \mathbf{y}\\
+=&amp; \ 0
+\end{align}\]</div>
+<p>There are several important issues we need to consider for linear regression. </p>
+<p>The first issue is that whether there is a relationship between the response and predictors, in other word, is at least one of the predictors useful in predicting the response. We can test the null hypothesis <span class="arithmatex">\(H_0: \beta_1 = \beta_2 = \cdots = \beta_p = 0\)</span> versus the alternative <span class="arithmatex">\(H_a\)</span>: at least one <span class="arithmatex">\(\beta_j\)</span> is non-zero. This can be performed by using the F-statistics. Sometimes we only to test a particular subset of coefficients though. In hypothesis testing, type I error (expected error) and type II error (false negative) matter as well.</p>
+<p>The second issue is deciding on important variables, this process is called <strong>variable selection</strong>. Ideally we can do that by trying a lot of different models and evaluating their qualities using methods like Akaike information criterion (AIC), Bayesian information criterion (BIC), adjusted <span class="arithmatex">\(R^2\)</span> etc. But in reality we cannot really try and test so many models, there are three classical approaches for this task: forward selection, backward selection, mixed selection. Lasso is one of the approach appeared in later years.</p>
+<p>The third issue is model fit.</p>
+<p>The fourth issue is prediction.</p>
 <h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
+<p>This is the special case where outputs are discrete. Logistic regression, linear discrimant analysis and KNN would be investigated.</p>
+<p>// image here</p>
+<p>Under such scenario, linear regression does not work ideally, so we need to introduce new models.</p>
+<h3 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
+<p>We let</p>
+<div class="arithmatex">\[\begin{cases}
+\mathbb{P}(y_i = 1 | x_i) = \frac{1}{1 + \exp(-x_i^T \beta)} \textbf{ (sample version)}\\
+\mathbb{P}(Y = 1 | X) = \frac{1}{1 + \exp(-\beta^T X)} \textbf{ (population version)}
+\end{cases}\]</div>
 
 
 

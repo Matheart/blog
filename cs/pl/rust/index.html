@@ -208,38 +208,6 @@
   
 
       
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../math/" class="md-tabs__link">
-        Mathematics
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../carol/" class="md-tabs__link">
-        珈乐(33)
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -796,94 +764,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../math/">Mathematics</a>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Mathematics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Mathematics
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../carol/">珈乐(33)</a>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="珈乐(33)" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          珈乐(33)
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1348,7 +1228,7 @@ Here <code>(1..4)</code> refers to <code>[1, 4)</code> just like Python, to refe
 </code></pre></div>
 We can convert raw string to the <code>String</code> type either by calling <code>String::from</code> or <code>.to_string()</code>.</p>
 <p>The internal structure looks like this:</p>
-<p><img src="../../../assets/string_internal.svg" alt="drawing" width="250"/></p>
+<p><img src="../../../assets/cs/pl/string_internal.svg" alt="drawing" width="250"/></p>
 <p>The left part is stored on stack, consisting of: the length and capacity (we can ignore capacity at this moment) of the string, and the pointer <code>ptr</code> pointing to string content on the heap. We store it on the heap because the length of string might be changed later (e.g.: extension).</p>
 <p>We use different methods to append new raw string / char.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">);</span><span class="w"></span>
