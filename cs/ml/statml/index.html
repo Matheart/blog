@@ -1,0 +1,1200 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/avatar.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Machine Learning - Matheart's Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"JetBrains Mono";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#machine-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Matheart&#39;s Note" class="md-header__button md-logo" aria-label="Matheart's Note" data-md-component="logo">
+      
+  <img src="../../../assets/avatar.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Matheart's Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Machine Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Computer Science
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Matheart&#39;s Note" class="md-nav__button md-logo" aria-label="Matheart's Note" data-md-component="logo">
+      
+  <img src="../../../assets/avatar.png" alt="logo">
+
+    </a>
+    Matheart's Note
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Computer Science</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Machine Learning</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Machine Learning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Statistical Learning</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Statistical Learning" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Statistical Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../generalization/">Generalization</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Generalization" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Generalization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../archi/">Computer Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Computer Architecture" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../pl/">Programming Languages</a>
+          
+            <label for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Programming Languages" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pl/rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pl/c%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../algo/">Algorithms</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Algorithms" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../markdown/">Markdown</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Markdown" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Markdown
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulations" class="md-nav__link">
+    Mathematical Formulations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reducible-and-irreducible-error" class="md-nav__link">
+    Reducible and irreducible error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-choosing" class="md-nav__link">
+    Model choosing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measuring-the-quality-of-fit" class="md-nav__link">
+    Measuring the quality of fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bias-variance-tradeoff" class="md-nav__link">
+    Bias &amp; Variance tradeoff
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    Regression
+  </a>
+  
+    <nav class="md-nav" aria-label="Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-linear-regression" class="md-nav__link">
+    Simple Linear Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-linear-regression" class="md-nav__link">
+    Multiple Linear Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="machine-learning">Machine Learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Some of the examples and sentences here are directly adopted from MATH4432 Statistical Machine Learning lecture slides. The note is not complete and may have frequent modifications, and the knowledge about regression analysis is ignored as this is not the focus of the course.</p>
+</div>
+<p><strong>Statistical learning (统计学习)</strong> refers to learn from data, can be classified as supervised, semi-supervised and unsupervised:</p>
+<ul>
+<li>supervised (with labeled output): prediction, estimation</li>
+<li>unsupervised (without labeled output): clustering</li>
+<li>semi-supervised (large amount of unlabeled data and small amount of labeled data) </li>
+</ul>
+<p>For prediction there are two types as well, regression (回归) refers to continuous or quantitative output value, otherwise would be classification (分类). </p>
+<p>Linear regression is the simplest regression method by using linear equations to approximate a certain function.</p>
+<h2 id="mathematical-formulations">Mathematical Formulations<a class="headerlink" href="#mathematical-formulations" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(n\)</span>: Number of distinct data points</p>
+<p><span class="arithmatex">\(p\)</span>: Number of features / predictors / variables</p>
+<p>For instance, regarding <code>Wage</code>, there are 300 sample points where they are 10 factors like <code>year</code>, <code>age</code>, <code>race</code>, ... Then we have <span class="arithmatex">\(n = 300\)</span>, <span class="arithmatex">\(p = 10\)</span>.</p>
+<p>We can use matrix <span class="arithmatex">\(\textbf{X}\)</span> to denote the data, and vector <span class="arithmatex">\(\textbf{y}\)</span> to denote output:</p>
+<div class="arithmatex">\[\begin{aligned}
+\mathbf{X}=\left[\begin{array}{cccc}
+x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 p} \\
+x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n p}
+\end{array}\right] 
+\ \ \ \mathbf{y}=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)
+\end{aligned}\]</div>
+<p>The rows of <span class="arithmatex">\(\textbf{X}\)</span> refer to each data point, we can denote it as <span class="arithmatex">\(x_i\)</span>:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>i</mi><mi>p</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+
+<p>The columns of <span class="arithmatex">\(\textbf{x}\)</span> refer to the collection of data points in terms of a certain feature, we can denote it as <span class="arithmatex">\(\textbf{x}_j\)</span>:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>j</mi></msub><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>x</mi><mrow><mn>1</mn><mi>j</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mn>2</mn><mi>j</mi></mrow></msub></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow><mi>n</mi><mi>j</mi></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+<p>Therefore,</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">X</mtext></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mn>1</mn></msub><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mn>2</mn></msub><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><mo>⋯</mo><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><msub><mrow data-mjx-texclass="ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>p</mi></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msubsup><mi>x</mi><mn>1</mn><mrow><mi>T</mi></mrow></msubsup></mtd></mtr><mtr><mtd><msubsup><mi>x</mi><mn>2</mn><mrow><mi>T</mi></mrow></msubsup></mtd></mtr><mtr><mtd><mrow><mo>⋮</mo></mrow></mtd></mtr><mtr><mtd><msubsup><mi>x</mi><mi>n</mi><mrow><mi>T</mi></mrow></msubsup></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+
+<p>We can give this formula:
+$$
+\textbf{y} = f(\textbf{X}) + \varepsilon
+$$
+<span class="arithmatex">\(\textbf{y}\)</span> is the observed output while <span class="arithmatex">\(\textbf{X}\)</span> is the observed input, <span class="arithmatex">\(f\)</span> is the ground truth function that maps <span class="arithmatex">\(\textbf{X}\)</span> into the ideal output, there's an error between observed and ideal output, and we have the assumption that <span class="arithmatex">\(\mathbb{E}(\varepsilon)=0\)</span>.</p>
+<p>A set of inputs <span class="arithmatex">\(\textbf{X}\)</span> is always available but it is not always easy for us to obtain the corresponding <span class="arithmatex">\(\textbf{y}\)</span>. We denote <span class="arithmatex">\(\hat{\textbf{y}}\)</span> as an estimate of <span class="arithmatex">\(\textbf{y}\)</span>, and <span class="arithmatex">\(\hat{f}(\textbf{X})\)</span> an estimate of <span class="arithmatex">\(f(\textbf{X})\)</span>.</p>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<h3 id="reducible-and-irreducible-error">Reducible and irreducible error<a class="headerlink" href="#reducible-and-irreducible-error" title="Permanent link">&para;</a></h3>
+<p>Then with <span class="arithmatex">\(\mathbb{E}(\varepsilon)=0\)</span> and an additional assumption that both <span class="arithmatex">\(\hat{f}\)</span> and <span class="arithmatex">\(X\)</span> is fixed for a moment, we have:</p>
+<div class="arithmatex">\[\begin{align}
+\mathbb{E}(Y-\hat{Y})^2 &amp; = \mathbb{E}[f(X) +\varepsilon - \hat{f}(X)]^2\\
+&amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + 2 \mathbb{E}((f(X)-\hat{f}(X))\varepsilon) + \mathbb{E}(\varepsilon^2)\\
+&amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + \mathbb{E}(\varepsilon^2) - \mathbb{E}(\varepsilon)^2\\
+&amp;= \mathbb{E}[f(X) - \hat{f}(X)]^2 + \text{Var}(\varepsilon)
+\end{align}\]</div>
+<p><span class="arithmatex">\(\mathbb{E}[f(X) - \hat{f}(X)]^2\)</span> is the error that we could reduce by selecting the most appropriate model, but <span class="arithmatex">\(\text{Var}(\varepsilon)\)</span> is the irreducible error.</p>
+<h3 id="model-choosing">Model choosing<a class="headerlink" href="#model-choosing" title="Permanent link">&para;</a></h3>
+<p>To minimize the reducible error, we need to pick a suitable model to estimate model, there are two types of model, namely parametric and non-parametric.</p>
+<p>For the parametric method, we first make an assumption about the form of the ground truth function e.g. linear. After the model has been selected, we use the training data to <strong>fit</strong> the model (train the parameters).</p>
+<p>A simple example: we assume <span class="arithmatex">\(f(X) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p\)</span>. The the model is trained to find the values of the parameters: <span class="arithmatex">\(\beta_0, \beta_1, \beta_2, \cdots, \beta_p\)</span> s.t. <span class="arithmatex">\(Y \approx \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p\)</span>. The most common approach is called ordinary least squares which we will introduce in next section.</p>
+<p>Non-parametric methods do not make explicit assumptions about the function form of <span class="arithmatex">\(f\)</span>, so it is more flexible than non-parametric methods. Instead, they seek an estimate of <span class="arithmatex">\(f\)</span> s.t. it gets as close to the data points as possible without being too rough or wiggly.</p>
+<p><img src="../../assets/cs/ml/param_fit.jpg" alt="drawing" width="500"/></p>
+<p>As the photo has shown, the top-left is the ground truth function, the top-right is the parametric liner model (which is <strong>underfitting</strong> in this case), the bottom-left is the fitted spline model, and the bottom-right is a rough spline model with zero errors on the training data (which is called <strong>overfitting</strong>).</p>
+<p>The definition of underfitting (not flexible enough) is that it performs poor in both training and testing data, while the definition of overfitting (too flexible) is that it performs very well in training data but poor in the testing data. We will further illustrate this in the bias-varience tradeoff part.</p>
+<p><img src="../../assets/cs/ml/flexbility_overfitting.jpg" alt="drawing" width="500"/></p>
+<p>The red curve is testing error and grey curve is training error. As you can see, when flexibility increases, the grey curve gradually fits into the noise, the training error reaches minimum point when flexibility equals to 5.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that model flexibility is not always proportional to the number of parameters. This holds for linear regression though.</p>
+</div>
+<p>Although we have many available models, <strong>there is no free lunch in statistics</strong>, which means there doesn't exist the so-called best model for all cases. On a particular data set, one specific method may work best, but some other method may work better on a similar but different set. </p>
+<h3 id="measuring-the-quality-of-fit">Measuring the quality of fit<a class="headerlink" href="#measuring-the-quality-of-fit" title="Permanent link">&para;</a></h3>
+<p>We typically use mean-squared-error (MSE) given by</p>
+<div class="arithmatex">\[\text{MSE} = \frac{1}{n}{\sum_{i=1}^{n}{(y_i - \hat{f}(x_i))^2}}\]</div>
+<p>There are train and test MSEs and our main interest is to choose the method that <strong>minimise test MSE</strong>.</p>
+<p>To avoid the curve being too flexible, we normally use the <strong>smoothing spline method</strong>, where we add a special regularisation term:</p>
+<div class="arithmatex">\[\frac{1}{n}{\sum_{i=1}^{n}{(y_i - \hat{f}(x_i))^2}} + \lambda \int \hat{f}''(t) \ dt\]</div>
+<p><span class="arithmatex">\(\lambda\)</span> is the tuning parameter, when it is zero, we could allow the intergal value to be very large, so the model can be very flexible i.e. <span class="arithmatex">\(y_i = \hat{f}(x_i)\)</span>, when it tends to infinity, as we want to minimize MSE, the model would be very rigid i.e. <span class="arithmatex">\(y_i = \hat{a}x_i + \hat{b}\)</span>. So we can adjust the flexibility of the model by tuning the parameter.</p>
+<h3 id="bias-variance-tradeoff">Bias &amp; Variance tradeoff<a class="headerlink" href="#bias-variance-tradeoff" title="Permanent link">&para;</a></h3>
+<p>As it is impossible for us to obtain all data, we could only obtain some training data <span class="arithmatex">\(D\)</span>, but we want the model to work for all possible scenarios, so we want to find <span class="arithmatex">\(\hat{f}\)</span> to minimise</p>
+<div class="arithmatex">\[\mathbb{E}_{D}[f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\]</div>
+<p>(<span class="arithmatex">\(\hat{f}(x;D)\)</span> is the estimated function from the data set <span class="arithmatex">\(D\)</span>)</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>Actually we can take one additional expectation w.r.t. <span class="arithmatex">\(x_0\)</span> here but it would make the formula too complicated.</p>
+</div>
+<p>Then we can derive the formula:</p>
+<div class="arithmatex">\[\begin{align}
+&amp; \ [f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+=&amp; \ [f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D)) + \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+=&amp; \ [f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D)) \ | \ X = x_0]^2 + [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+&amp;+ 2 \ [f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0] \ [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]
+\end{align}\]</div>
+<p>The first term is a constant. Inside the second term <span class="arithmatex">\(\hat{f}(x_0;D)\)</span> is still a random variable. For the third term, <span class="arithmatex">\([f(x_0)-\mathbb{E}_{D}[\hat{f}(x_0;D)] \ | \ X = x_0]\)</span> is a constant but <span class="arithmatex">\([\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]\)</span> is a random variable.</p>
+<p>Then we take expectation w.r.t. <span class="arithmatex">\(D\)</span> on both sides and we got the third term equal to 0 since </p>
+<div class="arithmatex">\[\mathbb{E}_{D} [\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0] = \mathbb{E}_{D}(\hat{f}(x_0;D)) - \mathbb{E}_{D}(\hat{f}(x_0;D)) = 0\]</div>
+<p>And the final result is</p>
+<div class="arithmatex">\[\begin{align}
+&amp; \ \mathbb{E}_{D}[f(x_0) - \hat{f}(x_0; D) \ | \ X = x_0]^2\\
+=&amp; \ \underbrace{[f(x_0) - \mathbb{E}_{D}(\hat{f}(x_0;D))] \ | \ X = x_0]^2}_{\text{Bias}^2} + \underbrace{\mathbb{E}_{D}{[\ \mathbb{E}_{D}(\hat{f}(x_0;D)) - \hat{f}(x_0; D) \ | \ X = x_0]^2}}_{\text{Variance}}\\
+\end{align}\]</div>
+<p>This formula tells us that we need to balance both bias and variance instead of only focusing on minimizing bias.</p>
+<p><strong>Bias</strong> refers to the error that is introduced by approximating a real-life problem, which may ne extremely complicated, by a much simpler model. The formula is quite easy to understand, is the difference between the ground truth value and the predicted value.</p>
+<p><strong>Variance</strong> refers to the amount by which <span class="arithmatex">\(\hat{f}\)</span> would change if we estimated it using a different training data set. Ideally the estimate for <span class="arithmatex">\(f\)</span> should not vary too much between training sets. The formula is basically a slightly complex version of <span class="arithmatex">\(\mathbb{E}[(X - \mathbb{E}(X))^2]\)</span>.</p>
+<p>For simple model, it has low variance but large bias. Example: <span class="arithmatex">\(Y = f(X) + \varepsilon\)</span>, we simply let <span class="arithmatex">\(\hat{f}(X) = 0\)</span>, then variance is 0, but bias is very large <span class="arithmatex">\(f(X)^2\)</span>. For very flexible model, it has high variance but low bias. Example: <span class="arithmatex">\(Y = f(X) + \varepsilon = 0 + \varepsilon\)</span>, where the ground truth function is <span class="arithmatex">\(0\)</span>, we let <span class="arithmatex">\(\hat{f}(x_i) = y_i\)</span>, which means it fits into the noise. Then <span class="arithmatex">\(\text{Var}(\hat{f}(x_i)) = \text{Var}(y_i) = \text{Var}(\varepsilon_i) = \sigma_i^2\)</span>, bias is <span class="arithmatex">\(f(x_i) - \mathbb{E}(\hat{f}(x_i)) = f(x_i) - \mathbb{E}(y_i) = 0\)</span>.</p>
+<h2 id="regression">Regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h2>
+<h3 id="simple-linear-regression">Simple Linear Regression<a class="headerlink" href="#simple-linear-regression" title="Permanent link">&para;</a></h3>
+<p><img src="../../assets/cs/ml/simple_lr.jpg" alt="drawing" width="450"/></p>
+<p>Let <span class="arithmatex">\((x_1,y_1)\)</span>, <span class="arithmatex">\((x_2, y_2)\)</span>, <span class="arithmatex">\(\cdots\)</span>, <span class="arithmatex">\((x_n,y_n)\)</span> represent <span class="arithmatex">\(n\)</span> observation pairs, and we use simple linear regression <span class="arithmatex">\(\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_i\)</span> to fit the data.</p>
+<p>The error is defined as <span class="arithmatex">\(e_i = y_i - \hat{y_i}\)</span>, then the residual sum of squares (RSS) is 
+$$
+e_1^2 + e_2^2 + \cdots + e_n^2 = \sum_{i=1}^{n}{(y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2}
+$$
+To minimise the error, we simply let <span class="arithmatex">\(\frac{\partial (\text{RSS})}{\partial \hat{\beta_0}} = \frac{\partial (\text{RSS})}{\partial \hat{\beta_1}} = 0\)</span>, then with some algebraic operations we obtain:
+$$
+\hat{\beta_1} = \frac{\sum_{i=1}^{n}{(x_i - \overline{x})(y_i - \overline{y})}}{\sum_{i=1}^{n}{(x_i - \overline{x})^2}} \text{, }  \hat{\beta_0} = \overline{y} - \hat{\beta_1} \overline{x}
+$$
+Actually, when we are drawing the contour map of RSS w.r.t. <span class="arithmatex">\(\beta_0, \beta_1\)</span>, we can obtain the following ellipsoid shape:</p>
+<p><img src="../../assets/cs/ml/rss_contour.jpg" alt="drawing" width="500"/></p>
+<p>This is actually because of the squared term <span class="arithmatex">\((y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2\)</span>, term like this such as <span class="arithmatex">\(\beta_0^2 + \beta_1^2 = 1\)</span> can be written in the quadratic form (二次型):</p>
+<div class="arithmatex">\[\begin{bmatrix}
+ \beta_0
+ \\ \beta_1
+\end{bmatrix}^{T}
+\begin{bmatrix}
+  1&amp;0 \\
+  0&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+ \beta_0
+ \\ \beta_1
+\end{bmatrix}\]</div>
+<p>The quadratic form like <span class="arithmatex">\(\beta^{T}A \beta = C\)</span> with A being positive and definite (正定) has ellipsoid shape.</p>
+<p>After we have computed the values of coefficients, we can use our statistical knowledge to assess the accuracy of estimates. We assume the true relationship between <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> is the following:
+$$
+Y = f(X) + \varepsilon, f(X) = \beta_0 + \beta_1 X
+$$
+Then as the graph shows</p>
+<p><img src="../../assets/cs/ml/accuracy_lr.jpg" alt="drawing" width="500"/></p>
+<p>Red line is the true relationship, which is known as <strong>population regression line</strong>, other lines are least squares lines computed based on separate random set of observations. Each line is different but on average the least squares lines are quite close to the population regression line.</p>
+<p>We can use the <strong>residual standard error (RSE)</strong> to provide an absolute measure of lack of fit of the linear model (number of freedoms equals to the total number of parameters minus the two we want to estimate):
+$$
+\text{RSE} = \sqrt{\frac{1}{\text{degree of freedom}} \text{RSS}} = \sqrt{\frac{1}{n-2} \sum_{i=1}^{n}{(y_i - \hat{y_i})^2}}
+$$</p>
+<p><strong>R^2 statistics</strong> provides an alternative measure of fit.</p>
+<p>$$
+\text{TSS} = \sum{(y_i - \overline{y})^2},  \
+\text{RSS} = \sum{(y_i - \hat{y_i})^2}
+$$
+And <span class="arithmatex">\(R^2\)</span> is given by </p>
+<div class="arithmatex">\[
+R^2 = \frac{\text{TSS} - \text{RSS}}{\text{TSS}} = 1 - \frac{\text{RSS}}{\text{TSS}}
+\]</div>
+<p>The value is always between 0 and 1, if it is closed to 0, it means the prediction has similar effect as mean value, so it doesn't fit the data well; when it is closed to 1, it means the RSS is very small, that means it fits the data well.</p>
+<h3 id="multiple-linear-regression">Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Permanent link">&para;</a></h3>
+<h4 id="derivation-of-formula">Derivation of formula<a class="headerlink" href="#derivation-of-formula" title="Permanent link">&para;</a></h4>
+<p>The equation becomes much more complicated than before:
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \varepsilon
+$$</p>
+<p>Then our goal is to find <span class="arithmatex">\(\hat{\beta} = [\hat{\beta_0}, \hat{\beta_1}, \cdots, \hat{\beta_p}]\)</span> be the least squares</p>
+<div class="arithmatex">\[
+\hat{\beta} = \text{argmin}_{\beta = [\beta_0, \beta_1, \cdots, \beta_p]}{\sum_{i=1}^{n}{(y_i - \beta_0 - \beta_1 x_{i1} - \cdots - \beta_{p} x_{ip})^2}}
+\]</div>
+<p>We know</p>
+<div class="arithmatex">\[\begin{aligned}
+\mathbf{X}=\left[\begin{array}{ccccc}
+\ 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 p} \\
+\ 1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 p} \\
+\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\ 1 &amp; x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n p}
+\end{array}\right] 
+\ \ \ \mathbf{y}=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)
+\end{aligned}\]</div>
+<p>where the first column is representing the constant part (would time <span class="arithmatex">\(\beta_0\)</span> later).</p>
+<p>Then the sum we want to minimise can be simplified as 
+<span class="arithmatex">\(\sum_{i=1}^{n}{(y_i - x_{\text{row i}} \ \beta)^2} \Rightarrow ||\mathbf{y} - \mathbf{X} \beta||_2^2\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="arithmatex">\(x_{\text{row i}}\)</span> is row vector, <span class="arithmatex">\(\beta\)</span> is column vector </p>
+<p><span class="arithmatex">\(\mathbf{X}: n \times (1 + p)\)</span>, <span class="arithmatex">\(\mathbf{y}: n \times 1\)</span>, <span class="arithmatex">\(\beta: (1 + p) \times 1\)</span></p>
+</div>
+<div class="arithmatex">\[\begin{align}
+&amp;||\mathbf{y}-\mathbf{X}\beta||\\
+=&amp; \ (\mathbf{y}-\mathbf{X}\beta)^{T} (\mathbf{y}-\mathbf{X}\beta)\\
+=&amp; \ (\mathbf{y}^T - \beta^T \mathbf{X}^T) (\mathbf{y}-\mathbf{X}\beta)\\
+=&amp; \ \mathbf{y}^T \mathbf{y} - \mathbf{y}^T \mathbf{X} \beta \ - \beta^T \mathbf{X}^T \mathbf{y} + \beta^T \mathbf{X}^T \mathbf{X}\beta\\ 
+\end{align}\]</div>
+<p>By dimension of <span class="arithmatex">\(\mathbf{X}\)</span>, <span class="arithmatex">\(\mathbf{y}\)</span> and <span class="arithmatex">\(\beta\)</span>, we know all four of the above are scalar, and in which <span class="arithmatex">\(\mathbf{y}^T \mathbf{X} \beta\)</span> is the transpose of <span class="arithmatex">\(\beta^T \mathbf{X}^T \mathbf{y}\)</span>, so they are supposed to have the same value:</p>
+<p>$$
+\hat{\beta} = \text{argmin}_{\beta}{ (\mathbf{y}^T \mathbf{y} - 2\mathbf{y}^T \mathbf{X} \beta  + \beta^T \mathbf{X}^T \mathbf{X}\beta)}
+$$
+We take partial derivative w.r.t. <span class="arithmatex">\(\beta\)</span>:</p>
+<div class="arithmatex">\[
+0 - 2 \mathbf{X}^T \mathbf{y} + 2 \mathbf{X}^T \mathbf{X} \beta = 0
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="arithmatex">\[\frac{\partial a^T X}{\partial X} = a\]</div>
+<div class="arithmatex">\[\frac{\partial X^T A X}{\partial X} = (A + A^{T}) X\]</div>
+</div>
+<p>Then</p>
+<div class="arithmatex">\[
+\mathbf{X}^T \mathbf{X} \beta = \mathbf{X}^T \mathbf{y}
+\]</div>
+<p>So we finally obtain</p>
+<div class="arithmatex">\[\begin{align}
+\hat{\beta} &amp; = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{T} \textbf{y}\\
+\hat{y} &amp; = X \hat{\beta}
+\end{align}\]</div>
+<h4 id="derive-the-mean-and-variance-of-beta-estimate">Derive the mean and variance of beta estimate<a class="headerlink" href="#derive-the-mean-and-variance-of-beta-estimate" title="Permanent link">&para;</a></h4>
+<p>By <span class="arithmatex">\(\mathbf{y} = \mathbf{X}\beta + \varepsilon\)</span> and <span class="arithmatex">\(\varepsilon\)</span> is a random noise vector, we know <span class="arithmatex">\(\mathbf{y}\)</span> is a random vector, so <span class="arithmatex">\(\hat \beta\)</span> is a random vector, and what follows is that <span class="arithmatex">\(\hat y\)</span> is a random vector as well. With this, we can compute the mean and variance of <span class="arithmatex">\(\hat \beta\)</span>.</p>
+<div class="arithmatex">\[\begin{align}
+\mathbb{E}(\hat \beta) &amp;= \mathbb{E} [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}]\\
+&amp;= \mathbb{E} [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T (\mathbf{X} \beta + \varepsilon)]\\
+&amp;= \mathbb{E} [\mathbf{X}^{-1} (\mathbf{X}^T)^{-1} \mathbf{X}^T \mathbf{X} \beta \ + (\mathbf{X}^T \mathbf{X}^{-1})\mathbf{X}^T \varepsilon]\\
+&amp;= \beta + (\mathbf{X}^T \mathbf{X}^{-1})\mathbf{X}^T\mathbb{E}(\varepsilon)\\
+&amp;= \beta
+\end{align}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="arithmatex">\[\text{Var}(\mathbf{z}) = \mathbb{E}(\mathbf{z} \mathbf{z}^T) - \mathbb{E}(\mathbf{z}) \mathbb{E}^{T}(\mathbf{z})\]</div>
+</div>
+<div class="arithmatex">\[\begin{align}
+\text{Var}(\hat \beta) &amp;= \text{Var}\ [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T\mathbf{y}]\\
+&amp;= \text{Var}\ [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T (\mathbf{X}\beta + \varepsilon)]\\
+&amp;= \text{Var}\ [\beta + (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]\\
+&amp;= \text{Var}\ [(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]\\
+&amp;= \mathbb{E}[(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon \ \cdot \varepsilon^T \mathbf{X}(\mathbf{X}^T \mathbf{X})^{-1}] -\underbrace{\mathbb{E}[(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]}_{0} \cdot \mathbb{E}^{T}[(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \varepsilon]\\
+&amp;= (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \ \mathbb{E}[ \varepsilon \cdot \varepsilon^T] \ \mathbf{X}(\mathbf{X}^T \mathbf{X})^{-1}\\
+&amp;= (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \  \sigma_{\varepsilon}^{2} \ \mathbf{X}(\mathbf{X}^T \mathbf{X})^{-1}\\
+&amp;=  \sigma_{\varepsilon}^{2} (\mathbf{X}^T \mathbf{X})^{-1}
+\end{align}\]</div>
+<div class="admonition derivation">
+<p class="admonition-title">Derivation</p>
+<p>By independence of each element inside the random vector <span class="arithmatex">\(\varepsilon\)</span>, <span class="arithmatex">\(\text{Var}(\varepsilon) = \sigma_{\varepsilon}^{2} \ I_{n \times n}\)</span>.</p>
+<div class="arithmatex">\[
+\sigma_{\varepsilon}^{2} \ I_{n \times n} = \text{Var}(\varepsilon) = \mathbb{E}(\varepsilon \varepsilon^T) - \mathbb{E}(\varepsilon) \mathbb{E}^{T}(\varepsilon) = \mathbb{E}(\varepsilon \varepsilon^T)
+\]</div>
+<p>e.g.: <span class="arithmatex">\(\varepsilon = \begin{pmatrix}
+\varepsilon_1\\
+\varepsilon_2 
+\end{pmatrix}\)</span>, <span class="arithmatex">\(\text{cov}\ \varepsilon = \begin{pmatrix}
+\sigma_{\varepsilon}^{2} &amp; 0\\
+0 &amp; \sigma_{\varepsilon}^{2}
+\end{pmatrix}\)</span></p>
+</div>
+<h4 id="geometrical-interpretation-of-least-squares-regression">Geometrical Interpretation of least squares regression<a class="headerlink" href="#geometrical-interpretation-of-least-squares-regression" title="Permanent link">&para;</a></h4>
+<p><img src="../../assets/cs/ml/geometric_lr.jpg"  width="400"/></p>
+<p>Like the graph suggests, <span class="arithmatex">\(\text{col} \ \mathbf{X}\)</span> is the hyperplane spanned by column vectors of <span class="arithmatex">\(\mathbf{X}\)</span>. <span class="arithmatex">\(\mathbf{X} \hat\beta\)</span> could be considered as the linear combination of column vectors. Then our goal is to find <span class="arithmatex">\(\hat \beta\)</span> to minimise the norm of <span class="arithmatex">\(\mathbf{y} - \mathbf{X} \hat{\beta}\)</span>, which can only be achieved when it is perpendicular to the hyperplane, that is, <span class="arithmatex">\(\mathbf{X}^T (\mathbf{y} - \mathbf{X} \hat{\beta}) = 0\)</span>.</p>
+<p>Verification:</p>
+<div class="arithmatex">\[\begin{align}
+&amp;\mathbf{X}^T (\mathbf{y} - \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1}\mathbf{X}^T \mathbf{y})\\
+=&amp; \ \mathbf{X}^T (\mathbf{I} - \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1}\mathbf{X}^T) \mathbf{y}\\
+=&amp; \ (\mathbf{X}^T - \mathbf{X}^T \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1}\mathbf{X}^T) \mathbf{y}\\
+=&amp; \ 0
+\end{align}\]</div>
+<p>There are several important issues we need to consider for linear regression. </p>
+<p>The first issue is that whether there is a relationship between the response and predictors, in other word, is at least one of the predictors useful in predicting the response. We can test the null hypothesis <span class="arithmatex">\(H_0: \beta_1 = \beta_2 = \cdots = \beta_p = 0\)</span> versus the alternative <span class="arithmatex">\(H_a\)</span>: at least one <span class="arithmatex">\(\beta_j\)</span> is non-zero. This can be performed by using the F-statistics. Sometimes we only to test a particular subset of coefficients though. In hypothesis testing, type I error (expected error) and type II error (false negative) matter as well.</p>
+<p>The second issue is deciding on important variables, this process is called <strong>variable selection</strong>. Ideally we can do that by trying a lot of different models and evaluating their qualities using methods like Akaike information criterion (AIC), Bayesian information criterion (BIC), adjusted <span class="arithmatex">\(R^2\)</span> etc. But in reality we cannot really try and test so many models, there are three classical approaches for this task: forward selection, backward selection, mixed selection. Lasso is one of the approach appeared in later years.</p>
+<p>The third issue is model fit.</p>
+<p>The fourth issue is prediction.</p>
+<h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
+<p>This is the special case where outputs are discrete. Logistic regression, linear discrimant analysis and KNN would be investigated.</p>
+<p>// image here</p>
+<p>Under such scenario, linear regression does not work ideally, so we need to introduce new models.</p>
+<h3 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
+<p>We let</p>
+<div class="arithmatex">\[\begin{cases}
+\mathbb{P}(y_i = 1 | x_i) = \frac{1}{1 + \exp(-x_i^T \beta)} \textbf{ (sample version)}\\
+\mathbb{P}(Y = 1 | X) = \frac{1}{1 + \exp(-\beta^T X)} \textbf{ (population version)}
+\end{cases}\]</div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Machine Learning" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Machine Learning
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../generalization/" class="md-footer__link md-footer__link--next" aria-label="Next: Domain Generalization" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Domain Generalization
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 - 2025 Matheart
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
