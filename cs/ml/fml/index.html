@@ -13,7 +13,7 @@
     
     
       
-        <title>Fml - Matheart's Note</title>
+        <title>Foundations of Machine Learning - Matheart's Note</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ch-2-the-pac-learning-framework" class="md-skip">
+        <a href="#foundations-of-machine-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fml
+              Foundations of Machine Learning
             
           </span>
         </div>
@@ -518,74 +518,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Fml
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Fml
+        Foundations of Machine Learning
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pac-learnable" class="md-nav__link">
-    PAC-Learnable
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classical-example-learning-axis-aligned-rectangles" class="md-nav__link">
-    Classical Example: Learning axis-aligned Rectangles
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guarantees-for-finite-hypothesis-sets" class="md-nav__link">
-    Guarantees for finite hypothesis sets
-  </a>
-  
-    <nav class="md-nav" aria-label="Guarantees for finite hypothesis sets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#consistent-case" class="md-nav__link">
-    Consistent case
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inconsistent-case" class="md-nav__link">
-    Inconsistent Case
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -840,55 +775,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pac-learnable" class="md-nav__link">
-    PAC-Learnable
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classical-example-learning-axis-aligned-rectangles" class="md-nav__link">
-    Classical Example: Learning axis-aligned Rectangles
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guarantees-for-finite-hypothesis-sets" class="md-nav__link">
-    Guarantees for finite hypothesis sets
-  </a>
-  
-    <nav class="md-nav" aria-label="Guarantees for finite hypothesis sets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#consistent-case" class="md-nav__link">
-    Consistent case
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inconsistent-case" class="md-nav__link">
-    Inconsistent Case
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -901,6 +787,7 @@
                 
 
 
+<h1 id="foundations-of-machine-learning">Foundations of Machine Learning<a class="headerlink" href="#foundations-of-machine-learning" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This book, <strong><em>Foundations of Machine Learning</em></strong>, serves as a general introduction to machine learning theory, it covers some basic tools of the field and also shows how to use the tools to justify and analyze the behevaior of machine learning algorithms.</p>
@@ -908,7 +795,7 @@
 <h1 id="ch-2-the-pac-learning-framework">Ch 2 The PAC Learning Framework<a class="headerlink" href="#ch-2-the-pac-learning-framework" title="Permanent link">&para;</a></h1>
 <div class="admonition introduction">
 <p class="admonition-title">Introduction</p>
-<p>PAC's full name is <strong>Probably Approximately Correct</strong>, this framework is mainly used to mathematically analyze the lower bound of the sample size in order to achieve a certain high possibility that the error is small to some extent.</p>
+<p>PAC's full name is <strong>Probably Approximately Correct</strong>, this framework is mainly used to mathematically analyze the lower bound of the sample size, in order to achieve a certain high possibility while the error is small to some extent.</p>
 </div>
 <p>To present in a more formal way, we define <strong>concept</strong> as the mapping we are going to learn from <span class="arithmatex">\(\mathcal{X} \to \mathcal{Y}\)</span>. For example, concept can be the set of points inside a rectangle (which is a classical example we are going to show later), and the concept class <span class="arithmatex">\(C\)</span> is the set of concepts we wish to learn. We denote <span class="arithmatex">\(O(n)\)</span> as an u.b. on the cost of the computational representation of any element <span class="arithmatex">\(x \in \mathcal{X}\)</span>, and size(<span class="arithmatex">\(c\)</span>) as the maximal cost of the computational representation of <span class="arithmatex">\(c \in C\)</span>.</p>
 <p>The learning problem is formulated as we have a <strong>hypothesis set</strong> <span class="arithmatex">\(H\)</span> and we pick <strong>hypothesis</strong> <span class="arithmatex">\(h\)</span> from it in order to approximate the ground truth concept (more formally, we say, <strong>target concept</strong>). Note that we always assume there is an underlying distribution <span class="arithmatex">\(D\)</span>, and the examples are <strong>independent and identically distributed (iid)</strong>, with this assumption, it is much easier for us to derive the theorems.</p>
@@ -926,7 +813,7 @@ R(h) &amp;= \ \ \ \mathbb{E}_{x \sim D}{\  \mathbf{1}_{h(x) \neq c(x)}} = \text{
 <div class="arithmatex">\[\text{Pr}_{S \sim D^m} [R(h_S) \leq \varepsilon] \geq 1 - \delta\]</div>
 <p>It is called <strong>efficiently</strong> PAC-learnable if it further runs in poly <span class="arithmatex">\((1/\varepsilon, 1/\delta, n, \text{size}(c))\)</span>.</p>
 </div>
-<p>The intuition is that if the required sample size is not polynomial of those four "parameters" (for example it grows exponential), in most practical case it is unrealistic to collect such amount of data.</p>
+<p>The intuition is that if the required sample size is not polynomial of those four "parameters" (for example it grows exponentially), in most practical case it is unrealistic to collect such amount of data.</p>
 <p>Also note that this framework does not have any additional assumptions about underlying distribution, but both training and test samples should be drawn from the same distribution.</p>
 <h2 id="classical-example-learning-axis-aligned-rectangles">Classical Example: Learning axis-aligned Rectangles<a class="headerlink" href="#classical-example-learning-axis-aligned-rectangles" title="Permanent link">&para;</a></h2>
 <p>We would not elaborate the proof here but would highlight some of the key points. First is the algorithm <span class="arithmatex">\(\mathcal{A}\)</span> is to return the tightest rectangle containing all points with label 1 (denote as <span class="arithmatex">\(R_S\)</span>), s.t. there is no False-positives and there's only False-negatives (and they are contained in <span class="arithmatex">\(R\)</span>). </p>
@@ -935,12 +822,31 @@ R(h) &amp;= \ \ \ \mathbb{E}_{x \sim D}{\  \mathbf{1}_{h(x) \neq c(x)}} = \text{
 <h2 id="guarantees-for-finite-hypothesis-sets">Guarantees for finite hypothesis sets<a class="headerlink" href="#guarantees-for-finite-hypothesis-sets" title="Permanent link">&para;</a></h2>
 <p>We extend the example above to more general settings, it is actually <strong>consistent</strong> i.e. the empirical error is 0 on training sample. In order to derive the bound more easily we need to assume that the hypothesis set is of finite size.</p>
 <h3 id="consistent-case">Consistent case<a class="headerlink" href="#consistent-case" title="Permanent link">&para;</a></h3>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>Let <span class="arithmatex">\(H\)</span> be a finite set of functions mapping from <span class="arithmatex">\(\mathcal{X}\)</span> to <span class="arithmatex">\(\mathcal{Y}\)</span>. Let <span class="arithmatex">\(\mathcal{A}\)</span> be an algorithm that for any target concept <strong><span class="arithmatex">\(c \in H\)</span></strong> and i.i.d. sample <span class="arithmatex">\(S\)</span> returns a consistent hypothesis <span class="arithmatex">\(h_S: \hat{R}(h_S) = 0\)</span>. Then for any <span class="arithmatex">\(\varepsilon, \delta &gt; 0\)</span>, the inequality <span class="arithmatex">\(\text{Pr}_{S \sim D^m}[R(h_S) \leq \varepsilon] \geq 1 - \delta\)</span> holds if:</p>
+<div class="arithmatex">\[m \geq \frac{1}{\varepsilon}(\log |H| + \log \frac{1}{\delta})\]</div>
+<p>Another equivalent statement is that for any <span class="arithmatex">\(\varepsilon, \delta &gt; 0\)</span>, with probability at least <span class="arithmatex">\(1 - \delta\)</span>, we have</p>
+<div class="arithmatex">\[R(h_S) \leq \frac{1}{m}(\log |H| + \log \frac{1}{\delta})\]</div>
+</div>
+<p>Want: We don't know what will be the <span class="arithmatex">\(h_S\)</span>, so we need to give an uniform convergence bound, bound Pr[<span class="arithmatex">\(\exists h \in H : \hat{R}(h) = 0 \text{ and } R(h) &gt; \varepsilon\)</span>] by <span class="arithmatex">\(\delta\)</span>.</p>
+<p>Trivially we know the set is equal to the union of all hypothesis <span class="arithmatex">\(h\)</span> that has <span class="arithmatex">\(\hat{R}(h) = 0 \text{ and } R(h) &gt; \varepsilon\)</span>, so by union bound, it is bounded by <span class="arithmatex">\(\sum_{h \in H}{\text{Pr}[\hat{R}(h) = 0 \text{ and } R(h) &gt; \varepsilon]}\)</span>, this is further bounded by the conditional probability <span class="arithmatex">\(\sum_{h \in H}{\text{Pr}[\hat{R}(h) = 0 | R(h) &gt; \varepsilon]}\)</span>.</p>
+<p>For each <span class="arithmatex">\(h\)</span> we are able to bound that by <span class="arithmatex">\((1 - \varepsilon)^m\)</span> by making use of definition of <span class="arithmatex">\(R(h)\)</span> and also i.i.d. property, this gives us the overall value is bounded by <span class="arithmatex">\(|H|(1 - \varepsilon)^m \leq |H| e^{-\varepsilon m}\)</span>.</p>
+<p>When <span class="arithmatex">\(m \geq \frac{1}{\varepsilon}(\log |H| + \log \frac{1}{\varepsilon})\)</span>, with some simple algebraic manipulation we can obtain <span class="arithmatex">\(|H| e^{-\varepsilon m} \leq \delta\)</span>, this concludes the proof.    <span class="arithmatex">\(\square\)</span></p>
+<p>The second statement shows that when the training sample size <span class="arithmatex">\(m\)</span> increases, the upper bound of generalization error will be tighter, this theoretically justifies learning algorithms benefit from larger labeled training samples. However, the price to pay for coming up with a consistent algorithm is the use of a larger hypothesis set <span class="arithmatex">\(H\)</span> containing target concepts, the upper bound invreases with <span class="arithmatex">\(|H|\)</span> but the dependency is only logarithmic.</p>
+<h4 id="some-examples">Some examples<a class="headerlink" href="#some-examples" title="Permanent link">&para;</a></h4>
+<p><strong>Conjunction of Boolean literals</strong>: <span class="arithmatex">\(|H|\)</span> is <span class="arithmatex">\(3^n\)</span> which is finite, we can also carry out a consistent algorithm, which means this is suitable for the theorem above. We can show <span class="arithmatex">\(m \geq ((\log 3)n + \log \frac{1}{\delta})\)</span></p>
+<p><strong>Universal Concept Class</strong>: To guarantee a consistent hypothesis, <span class="arithmatex">\(|H| \geq |U_n| = 2^{(2^n)}\)</span>, this gives us the sample complexity bound <span class="arithmatex">\(m \geq \frac{1}{\varepsilon}((\log 2) 2^n + \log \frac{1}{\delta})\)</span>, this is actually not a polynomial, so it is not PAC-learnable.</p>
+<p><strong>k-term DNF formulae</strong>: <span class="arithmatex">\(m \geq \frac{1}{\varepsilon}((\log 3)nk + \log \frac{1}{\delta})\)</span>. However, it is shown that this problem is <strong>RP</strong>, it is PAC-learnable but not efficient unless <strong>RP = NP</strong>.</p>
+<p><strong>k-CNF formulae</strong>: We can reduce the formula into conjection of boolean literals by a bijection, so this implies the PAC-learanability of <strong>K-CNF formula</strong>. However, although DNF formula can be rewritten into K-CNF formula, itself is still not PAC-learnable. This is beacause the number of new variables needed for this transformation is in <span class="arithmatex">\(O(n^k)\)</span>. <strong>This apparent paradox deals with key aspects of PAC-learning, which include the cost of the representation of the concept and the choice of the hypothesis set</strong>.</p>
 <h3 id="inconsistent-case">Inconsistent Case<a class="headerlink" href="#inconsistent-case" title="Permanent link">&para;</a></h3>
+<p>In practice, <span class="arithmatex">\(H\)</span> may not contain the hypothesis consistent with the training sample, but inconsistent hypothesis with small number of errors on number of training samples is still useful. <strong>Hoeffding's inequality</strong> will be used to relate the generalization error and empirical error of a single hypothesis.</p>
 <h1 id="ch-3-rademacher-complexity-and-vc-dimensions">Ch 3 Rademacher Complexity and VC-dimensions<a class="headerlink" href="#ch-3-rademacher-complexity-and-vc-dimensions" title="Permanent link">&para;</a></h1>
 <div class="admonition introduction">
 <p class="admonition-title">Introduction</p>
 <p>We deal with the infinite hypothesis size in this chapter, we can use various techniques to reduce it into finite sets of hypotheses can proceed as in the previous chapter. Using <strong>Rademacher Complexity</strong> based on <strong>McDiarmid's inequality</strong> can derive high-quality bounds. However, the computation of empirical Rademacher complexity is NP-hard for some hypothesis sets. So we will introduce the <strong>growth function</strong> and <strong>VC-dimension</strong> which is easier to compute.</p>
 </div>
+<p>Formally any loss function <span class="arithmatex">\(L\)</span> is <span class="arithmatex">\(\mathcal{Y} \times \mathcal{Y} \to \mathbb{R}\)</span>, we use <span class="arithmatex">\(G\)</span> to denote family of loss functions associated to <span class="arithmatex">\(H\)</span>, </p>
 
 
 
