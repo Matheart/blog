@@ -1,28 +1,43 @@
-site_name: Matheart's Note
+site_name: Matheart's Blog
 
 nav:
     - Home:
         - index.md
-    - Computer Science: 
-        - cs/index.md
-        - Machine Learning:
-          - cs/ml/index.md
-        - Computer Architecture:
-          - cs/archi/index.md
-        - Programming Languages:
-            - cs/pl/index.md
-            - Rust: cs/pl/rust.md
-        - Algorithms:
-          - cs/algo/index.md
-        - Markdown:
-            - cs/markdown/index.md
-    - Mathematics: 
-        - math/index.md
-    - A-SOUL:
-        - asoul/index.md
+    - 日常:
+        - 读上交生存手册有感:
+          - daily/sjtu_survival.md
+        - 一点小update:
+          - daily/update.md
+    - 学术:
+        - 泛函分析-无限维的线性代数（上）:
+          - academic/func_anal1.md
+        - 如何经营社交平台来获得更好的学术信息源:
+          - academic/acad_media.md
+    # - Computer Science: 
+    #     - cs/index.md
+    #     - Machine Learning:
+    #       - cs/ml/index.md
+    #       - Statistical Learning:
+    #         - cs/ml/statml/index.md
+    #       - Generalization:
+    #         - cs/ml/generalization/index.md
+    #       - Foundations of Machine Learning:
+    #         - cs/ml/fml.md
+    #     - Computer Architecture:
+    #       - cs/archi/index.md
+    #     - Programming Languages:
+    #         - cs/pl/index.md
+    #         - Rust: cs/pl/rust.md
+    #         - C++: cs/pl/c++.md
+    #     - Algorithms:
+    #       - cs/algo/index.md
+    #     - Markdown:
+    #         - cs/markdown/index.md
 
 theme: 
   name: 'material'
+  language: zh
+  custom_dir: overrides
   logo: assets/avatar.png
   favicon: assets/avatar.png
   features:
@@ -84,5 +99,13 @@ extra_javascript:
 
 plugins:
   - search
+  #- meta
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
 
-copyright: Copyright &copy; 2022 - 2025 Matheart
+copyright: Copyright &copy; 2022 - 2025 數心 (Matheart)

@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Rust](rust)
+- [C++](c++)
 
 ## The Proramming Paradigms
-<img src="../../assets/pl.png" alt="drawing" width="900"/>
+<img src="../../assets/cs/pl/pl.png"  width="900"/>

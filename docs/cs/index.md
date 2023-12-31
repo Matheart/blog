@@ -5,8 +5,12 @@
 
 ## Table of Contents
 - [Machine Learning](ml)
+    - [Statistical Learning](ml/statml)
+    - [Generalization](ml/generalization)
+    - [Foundations of Machine Learning](ml/fml.md)
 - [Computer Architecture](archi)
 - [Programming Languages](pl)
     - [Rust](pl/rust)
+    - [C++](pl/c++)
 - [Algorithms](algo)
 - [Markdown](markdown)

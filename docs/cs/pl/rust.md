@@ -334,7 +334,7 @@ We can convert raw string to the `String` type either by calling `String::from` 
 
 The internal structure looks like this:
 
-<img src="../../../assets/string_internal.svg" alt="drawing" width="250"/>
+<img src="../../../assets/cs/pl/string_internal.svg" alt="drawing" width="250"/>
 
 The left part is stored on stack, consisting of: the length and capacity (we can ignore capacity at this moment) of the string, and the pointer `ptr` pointing to string content on the heap. We store it on the heap because the length of string might be changed later (e.g.: extension).
 
